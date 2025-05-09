@@ -1,0 +1,105 @@
+.status-indicator-box {
+  background-color: var(--surface);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
+  box-shadow: var(--shadow-md);
+}
+
+.status-indicator-title {
+  font-weight: 600;
+  margin-bottom: var(--spacing-md);
+  color: var(--gray-800);
+}
+
+.status-item {
+  display: flex;
+  align-items: center;
+  padding-bottom: var(--spacing-md);
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.status-details {
+  flex: 1;
+  margin-left: var(--spacing-md);
+}
+
+.status-details h4 {
+  font-weight: 600;
+  margin-bottom: var(--spacing-xs);
+}
+
+.status-details p {
+  font-size: 0.85rem;
+  color: var(--gray-600);
+  margin-bottom: var(--spacing-xs);
+}
+
+.status-progress {
+  height: 6px;
+  background-color: var(--gray-200);
+  border-radius: 3px;
+  margin: var(--spacing-xs) 0;
+  overflow: hidden;
+}
+
+.status-bar {
+  height: 100%;
+  background-color: var(--primary);
+  border-radius: 3px;
+}
+
+.status-label {
+  font-size: 0.8rem;
+  color: var(--gray-700);
+}
+
+.schedule-days {
+  display: flex;
+  justify-content: space-between;
+  margin: var(--spacing-md) 0;
+}
+
+.schedule-day {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.day-label {
+  font-size: 0.85rem;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--gray-200);
+  margin-bottom: var(--spacing-xs);
+  transition: all 0.2s ease;
+}
+
+.schedule-day.active .day-label {
+  background-color: var(--primary);
+  color: var(--on-primary);
+}
+
+.schedule-adjustment {
+  margin-top: var(--spacing-md);
+  padding-top: var(--spacing-md);
+  border-top: 1px solid var(--gray-200);
+}
+
+.btn-cancel, .btn-update {
+  color: var(--gray-600);
+  padding: var(--spacing-xs);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.btn-cancel:hover, .btn-update:hover {
+  color: var(--primary);
+  text-decoration: underline;
+}

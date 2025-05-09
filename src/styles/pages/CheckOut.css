@@ -1,0 +1,235 @@
+.status-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: var(--spacing-lg) 0;
+}
+
+.status-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  width: 80px;
+}
+
+.status-circle {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: var(--gray-300);
+  color: var(--gray-600);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  margin-bottom: var(--spacing-xs);
+}
+
+.status-step.active .status-circle {
+  background-color: var(--primary);
+  color: var(--on-primary);
+}
+
+.status-step.completed .status-circle {
+  background-color: var(--secondary);
+  color: var(--on-secondary);
+}
+
+.status-label {
+  font-size: 0.8rem;
+  text-align: center;
+  color: var(--gray-600);
+}
+
+.status-step.active .status-label {
+  color: var(--primary);
+  font-weight: 500;
+}
+
+.status-line {
+  flex: 1;
+  height: 2px;
+  background-color: var(--gray-300);
+  margin: 0 var(--spacing-xs);
+  margin-top: -18px;
+}
+
+/* Stay details styles */
+.stay-details {
+  margin-top: var(--spacing-md);
+}
+
+.stay-detail-item {
+  display: flex;
+  justify-content: space-between;
+  padding: var(--spacing-sm) 0;
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.detail-label {
+  color: var(--gray-600);
+}
+
+.detail-value {
+  font-weight: 500;
+}
+
+/* Bill styles */
+.bill-summary {
+  margin-top: var(--spacing-md);
+}
+
+.bill-header {
+  display: flex;
+  font-weight: 600;
+  border-bottom: 2px solid var(--gray-300);
+  padding-bottom: var(--spacing-xs);
+  margin-bottom: var(--spacing-sm);
+}
+
+.bill-col {
+  flex: 1;
+}
+
+.bill-col:last-child {
+  text-align: right;
+  flex: 0.5;
+}
+
+.bill-item {
+  display: flex;
+  padding: var(--spacing-xs) 0;
+  color: var(--gray-700);
+  font-size: 0.9rem;
+}
+
+.bill-subtotal, .bill-total, .bill-balance {
+  display: flex;
+  padding: var(--spacing-sm) 0;
+  font-weight: 600;
+  border-top: 1px solid var(--gray-300);
+  margin-top: var(--spacing-xs);
+}
+
+.bill-total {
+  color: var(--primary-dark);
+  font-size: 1.1rem;
+}
+
+.bill-actions {
+  display: flex;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-md);
+}
+
+/* Payment method styles */
+.payment-methods {
+  margin-top: var(--spacing-md);
+}
+
+.payment-method-option {
+  display: flex;
+  align-items: center;
+  padding: var(--spacing-sm) 0;
+  border-bottom: 1px solid var(--gray-200);
+  cursor: pointer;
+}
+
+.payment-method-option label {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  cursor: pointer;
+  margin-left: var(--spacing-sm);
+}
+
+.payment-method-option.active {
+  border-left: 3px solid var(--primary);
+  padding-left: var(--spacing-sm);
+}
+
+.payment-label {
+  font-weight: 500;
+}
+
+.payment-details {
+  font-size: 0.85rem;
+  color: var(--gray-600);
+  margin-top: var(--spacing-xs);
+}
+
+.new-card-form {
+  margin-top: var(--spacing-md);
+  padding-top: var(--spacing-md);
+  border-top: 1px solid var(--gray-200);
+}
+
+.form-row {
+  display: flex;
+  gap: var(--spacing-md);
+}
+
+.form-row .form-group {
+  flex: 1;
+}
+
+/* Quick rating styles */
+.quick-rating {
+  margin-top: var(--spacing-md);
+}
+
+.quick-rating-options {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: var(--spacing-md);
+}
+
+.rating-option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  padding: var(--spacing-sm);
+  border-radius: var(--radius-md);
+  transition: all 0.2s ease;
+}
+
+.rating-option:hover {
+  background-color: var(--gray-100);
+}
+
+.rating-option.active {
+  background-color: var(--primary-light);
+}
+
+.rating-emoji {
+  font-size: 2rem;
+  margin-bottom: var(--spacing-xs);
+}
+
+.rating-label {
+  font-size: 0.85rem;
+}
+
+/* Checkout actions styles */
+.checkout-actions {
+  display: flex;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-md);
+  margin-bottom: var(--spacing-xl);
+}
+
+.checkout-actions button {
+  flex: 1;
+}
+
+@media (min-width: 768px) {
+  .bill-actions {
+    flex-direction: row;
+  }
+  
+  .bill-actions button {
+    flex: 1;
+  }
+}

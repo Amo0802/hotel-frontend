@@ -1,0 +1,164 @@
+.tabs {
+  display: flex;
+  background-color: var(--surface);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--spacing-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.tab {
+  flex: 1;
+  text-align: center;
+  padding: var(--spacing-md);
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.tab:hover {
+  background-color: var(--gray-100);
+}
+
+.tab.active {
+  color: var(--primary);
+  border-bottom-color: var(--primary);
+  font-weight: 500;
+}
+
+.tab-content {
+  margin-bottom: var(--spacing-lg);
+}
+
+.tab-pane {
+  display: none;
+}
+
+.tab-pane.active {
+  display: block;
+}
+
+.found-items-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-md);
+}
+
+.found-item-card {
+  background-color: var(--surface);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-md);
+  display: flex;
+  align-items: center;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--gray-200);
+}
+
+.item-image {
+  width: 80px;
+  height: 80px;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  margin-right: var(--spacing-md);
+}
+
+.item-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.item-details {
+  flex: 1;
+}
+
+.item-name {
+  font-weight: 600;
+  margin-bottom: var(--spacing-xs);
+}
+
+.item-description {
+  font-size: 0.85rem;
+  color: var(--gray-600);
+  margin-bottom: var(--spacing-xs);
+}
+
+.item-date {
+  font-size: 0.8rem;
+  color: var(--gray-500);
+  margin-bottom: var(--spacing-sm);
+}
+
+.filter-controls {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: var(--spacing-md);
+  gap: var(--spacing-md);
+  flex-wrap: wrap;
+}
+
+.search-box {
+  flex: 2;
+  min-width: 200px;
+}
+
+.reports-list {
+  margin-top: var(--spacing-md);
+}
+
+.report-item {
+  display: flex;
+  align-items: flex-start;
+  padding: var(--spacing-md);
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.report-status {
+  padding: 4px 8px;
+  border-radius: var(--radius-sm);
+  font-size: 0.75rem;
+  margin-right: var(--spacing-md);
+  font-weight: 500;
+}
+
+.report-status.pending {
+  background-color: #FFF3CD;
+  color: #856404;
+}
+
+.report-status.found {
+  background-color: #D4EDDA;
+  color: #155724;
+}
+
+.report-content {
+  flex: 1;
+}
+
+.report-title {
+  font-weight: 600;
+  margin-bottom: var(--spacing-xs);
+}
+
+.report-date {
+  font-size: 0.8rem;
+  color: var(--gray-500);
+  margin-bottom: var(--spacing-xs);
+}
+
+.report-description {
+  font-size: 0.85rem;
+  color: var(--gray-600);
+}
+
+.report-actions {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 768px) {
+  .found-items-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

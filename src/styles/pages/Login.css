@@ -1,0 +1,9 @@
+.login-form {
+  margin-bottom: var(--spacing-md);
+}
+
+.forgot-code-link {
+  display: block;
+  text-align: center;
+  margin-top: var(--spacing-md);
+}

@@ -1,0 +1,143 @@
+.menu-tabs {
+  display: flex;
+  overflow-x: auto;
+  margin-bottom: var(--spacing-md);
+  background-color: var(--surface);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}
+
+.menu-tab {
+  padding: var(--spacing-md);
+  white-space: nowrap;
+  cursor: pointer;
+  color: var(--gray-600);
+  border-bottom: 2px solid transparent;
+}
+
+.menu-tab.active {
+  color: var(--primary);
+  border-bottom-color: var(--primary);
+  font-weight: 500;
+}
+
+.menu-section {
+  margin-bottom: var(--spacing-xl);
+}
+
+.menu-items {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-md);
+}
+
+.menu-item {
+  background-color: var(--surface);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-md);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--gray-200);
+}
+
+.menu-item-content {
+  flex: 1;
+}
+
+.menu-item-title {
+  font-weight: 600;
+  margin-bottom: var(--spacing-xs);
+}
+
+.menu-item-description {
+  font-size: 0.85rem;
+  color: var(--gray-600);
+  margin-bottom: var(--spacing-xs);
+}
+
+.menu-item-price {
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.btn-add-item {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: var(--primary);
+  color: var(--on-primary);
+  border: none;
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.order-summary {
+  background-color: var(--surface);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-md);
+  margin-top: var(--spacing-xl);
+  box-shadow: var(--shadow-md);
+}
+
+.order-items {
+  margin: var(--spacing-md) 0;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.order-item {
+  display: flex;
+  align-items: center;
+  padding: var(--spacing-sm);
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.order-item-title {
+  flex: 1;
+}
+
+.order-item-price {
+  margin: 0 var(--spacing-md);
+  font-weight: 500;
+}
+
+.btn-remove-item {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: var(--gray-200);
+  color: var(--gray-700);
+  border: none;
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.empty-order-message {
+  color: var(--gray-500);
+  text-align: center;
+  padding: var(--spacing-lg);
+}
+
+.order-total {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 700;
+  padding: var(--spacing-md) 0;
+  border-top: 1px solid var(--gray-200);
+  margin-bottom: var(--spacing-md);
+}
+
+.loading {
+  text-align: center;
+  padding: var(--spacing-lg);
+  font-weight: 500;
+  color: var(--gray-600);
+}
