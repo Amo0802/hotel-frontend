@@ -1,5 +1,6 @@
-import React, { createContext, useContext, useState, ReactNode } from 'react';
+import React, { createContext, useContext, useState, ReactNode, useEffect } from 'react';
 import { AppState, CleaningRequest, MaintenanceRequest } from '../types';
+import { getCurrentLanguage } from '../i18n';
 
 interface AppStateContextType extends AppState {
   setCurrentLanguage: (language: string) => void;
@@ -23,8 +24,9 @@ interface AppStateProviderProps {
 }
 
 export const AppStateProvider: React.FC<AppStateProviderProps> = ({ children }) => {
+  // Initialize with the language from localStorage or browser
   const [appState, setAppState] = useState<AppState>({
-    currentLanguage: 'en',
+    currentLanguage: getCurrentLanguage(),
     dndActive: false,
     activeRequests: {
       cleaning: null,

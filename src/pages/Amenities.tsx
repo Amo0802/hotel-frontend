@@ -1,8 +1,11 @@
+// src/pages/Amenities.tsx
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import LogoPlaceholder from '../components/common/LogoPlaceholder';
 import Button from '../components/common/Button';
 import Footer from '../components/common/Footer';
+import FloatingLanguageSelector from '../components/common/FloatingLanguageSelector';
 import '../styles/pages/Amenities.css';
 
 interface Amenity {
@@ -16,43 +19,44 @@ interface Amenity {
 }
 
 const Amenities: React.FC = () => {
+  const { t } = useTranslation();
   const navigate = useNavigate();
 
   const amenities: Amenity[] = [
     {
       id: 'spa',
-      title: 'Spa & Wellness',
-      description: 'Indulge in relaxing treatments and massages',
+      title: t('amenities.spa'),
+      description: t('amenities.spaDesc'),
       hours: '9:00 AM - 8:00 PM',
-      location: 'Level 3',
-      actionText: 'Book a Session',
+      location: t('amenities.floors.level3'),
+      actionText: t('amenities.bookSession'),
       image: '/assets/spa.jpg'
     },
     {
       id: 'pool',
-      title: 'Swimming Pool',
-      description: 'Enjoy our heated indoor and outdoor pools',
+      title: t('amenities.pool'),
+      description: t('amenities.poolDesc'),
       hours: '7:00 AM - 10:00 PM',
-      location: 'Level 5',
-      actionText: 'Reserve Time Slot',
+      location: t('amenities.floors.level5'),
+      actionText: t('amenities.reserveTime'),
       image: '/assets/pool.jpg'
     },
     {
       id: 'gym',
-      title: 'Fitness Center',
-      description: 'State-of-the-art equipment and personal trainers',
+      title: t('amenities.gym'),
+      description: t('amenities.gymDesc'),
       hours: '24 Hours',
-      location: 'Level 2',
-      actionText: 'Book a Trainer',
+      location: t('amenities.floors.level2'),
+      actionText: t('amenities.bookTrainer'),
       image: '/assets/gym.jpg'
     },
     {
       id: 'business-center',
-      title: 'Business Center',
-      description: 'Meeting rooms and business services',
+      title: t('amenities.business'),
+      description: t('amenities.businessDesc'),
       hours: '8:00 AM - 8:00 PM',
-      location: 'Level 1',
-      actionText: 'Book a Room',
+      location: t('amenities.floors.level1'),
+      actionText: t('amenities.bookRoom'),
       image: '/assets/business.jpg'
     }
   ];
@@ -78,10 +82,12 @@ const Amenities: React.FC = () => {
 
   return (
     <div className="container">
+      <FloatingLanguageSelector />
+      
       <div className="logo-area">
         <LogoPlaceholder />
-        <h1 className="heading-primary">Hotel Amenities</h1>
-        <p className="help-text text-center">Explore our facilities and services</p>
+        <h1 className="heading-primary">{t('amenities.title')}</h1>
+        <p className="help-text text-center">{t('amenities.explore')}</p>
       </div>
       
       <div className="amenities-grid">
@@ -113,7 +119,7 @@ const Amenities: React.FC = () => {
       </div>
       
       <Button variant="text" onClick={() => navigate('/home')}>
-        ← Back to Home
+        ← {t('common.backHome')}
       </Button>
       
       <Footer />

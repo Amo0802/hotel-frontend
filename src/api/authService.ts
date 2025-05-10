@@ -1,4 +1,3 @@
-// API service for authentication
 import { get, post } from './apiClient';
 import { User, ApiResponse } from '../types';
 

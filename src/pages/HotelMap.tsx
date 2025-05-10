@@ -1,8 +1,11 @@
+// src/pages/HotelMap.tsx
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import LogoPlaceholder from '../components/common/LogoPlaceholder';
 import Button from '../components/common/Button';
 import Footer from '../components/common/Footer';
+import FloatingLanguageSelector from '../components/common/FloatingLanguageSelector';
 import '../styles/pages/HotelMap.css';
 
 interface MapMarker {
@@ -21,6 +24,7 @@ interface MapLegendItem {
 }
 
 const HotelMap: React.FC = () => {
+  const { t } = useTranslation();
   const navigate = useNavigate();
   const [currentFloor, setCurrentFloor] = useState<string>('lobby');
   const [searchTerm, setSearchTerm] = useState<string>('');
@@ -29,7 +33,7 @@ const HotelMap: React.FC = () => {
     {
       id: 'pool',
       icon: '🏊',
-      label: 'Pool',
+      label: t('hotelMap.locations.pool'),
       position: {
         top: '30%',
         left: '40%'
@@ -38,7 +42,7 @@ const HotelMap: React.FC = () => {
     {
       id: 'restaurant',
       icon: '🍽️',
-      label: 'Restaurant',
+      label: t('hotelMap.locations.restaurant'),
       position: {
         top: '50%',
         left: '60%'
@@ -47,7 +51,7 @@ const HotelMap: React.FC = () => {
     {
       id: 'room',
       icon: '🛌',
-      label: 'Your Room',
+      label: t('hotelMap.locations.yourRoom'),
       position: {
         top: '70%',
         left: '30%'
@@ -56,12 +60,12 @@ const HotelMap: React.FC = () => {
   ];
 
   const legendItems: MapLegendItem[] = [
-    { icon: '🏊', text: 'Pool' },
-    { icon: '🍽️', text: 'Restaurant' },
-    { icon: '🚻', text: 'Restrooms' },
-    { icon: '🛌', text: 'Your Room' },
-    { icon: '🚪', text: 'Exit' },
-    { icon: '⬆️', text: 'Elevator' }
+    { icon: '🏊', text: t('hotelMap.locations.pool') },
+    { icon: '🍽️', text: t('hotelMap.locations.restaurant') },
+    { icon: '🚻', text: t('hotelMap.locations.restrooms') },
+    { icon: '🛌', text: t('hotelMap.locations.yourRoom') },
+    { icon: '🚪', text: t('hotelMap.locations.exit') },
+    { icon: '⬆️', text: t('hotelMap.locations.elevator') }
   ];
 
   const handleFloorChange = (e: React.ChangeEvent<HTMLSelectElement>): void => {
@@ -77,27 +81,29 @@ const HotelMap: React.FC = () => {
 
   return (
     <div className="container">
+      <FloatingLanguageSelector />
+      
       <div className="logo-area">
         <LogoPlaceholder />
-        <h1 className="heading-primary">Hotel Map</h1>
-        <p className="help-text text-center">Find your way around our property</p>
+        <h1 className="heading-primary">{t('hotelMap.title')}</h1>
+        <p className="help-text text-center">{t('hotelMap.findYourWay')}</p>
       </div>
       
       <div className="map-controls">
         <div className="floor-selector">
-          <label htmlFor="floor-select">Select Floor:</label>
+          <label htmlFor="floor-select">{t('hotelMap.selectFloor')}</label>
           <select 
             id="floor-select" 
             className="form-input"
             value={currentFloor}
             onChange={handleFloorChange}
           >
-            <option value="lobby">Lobby</option>
-            <option value="1">Level 1</option>
-            <option value="2">Level 2</option>
-            <option value="3">Level 3</option>
-            <option value="4">Level 4</option>
-            <option value="5">Level 5</option>
+            <option value="lobby">{t('hotelMap.floors.lobby')}</option>
+            <option value="1">{t('hotelMap.floors.level1')}</option>
+            <option value="2">{t('hotelMap.floors.level2')}</option>
+            <option value="3">{t('hotelMap.floors.level3')}</option>
+            <option value="4">{t('hotelMap.floors.level4')}</option>
+            <option value="5">{t('hotelMap.floors.level5')}</option>
           </select>
         </div>
         
@@ -105,7 +111,7 @@ const HotelMap: React.FC = () => {
           <input 
             type="text" 
             className="form-input" 
-            placeholder="Search for a location" 
+            placeholder={t('hotelMap.searchLocation')} 
             id="map-search"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
@@ -142,7 +148,7 @@ const HotelMap: React.FC = () => {
       </div>
       
       <div className="map-legend">
-        <h3>Legend</h3>
+        <h3>{t('hotelMap.legend')}</h3>
         <div className="legend-items">
           {legendItems.map((item, index) => (
             <div key={index} className="legend-item">
@@ -154,7 +160,7 @@ const HotelMap: React.FC = () => {
       </div>
       
       <Button variant="text" onClick={() => navigate('/home')}>
-        ← Back to Home
+        ← {t('common.backHome')}
       </Button>
       
       <Footer />

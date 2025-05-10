@@ -1,7 +1,8 @@
-// Component for language selection screen
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { useAppState } from '../context/AppStateContext';
+import { changeLanguage } from '../i18n';
 import LogoPlaceholder from '../components/common/LogoPlaceholder';
 import Card from '../components/common/Card';
 import Button from '../components/common/Button';
@@ -23,11 +24,16 @@ const LANGUAGES: Language[] = [
 ];
 
 const LanguageSelection: React.FC = () => {
+  const { t } = useTranslation();
   const { currentLanguage, setCurrentLanguage } = useAppState();
   const navigate = useNavigate();
 
   const handleLanguageSelect = (languageCode: string): void => {
+    // Update app state
     setCurrentLanguage(languageCode);
+    
+    // Update i18next and localStorage
+    changeLanguage(languageCode);
   };
 
   const handleContinue = (): void => {
@@ -41,7 +47,7 @@ const LanguageSelection: React.FC = () => {
       </div>
       
       <Card>
-        <h1 className="heading-primary">Select Your Language</h1>
+        <h1 className="heading-primary">{t('language.title')}</h1>
         
         <div className="language-selector">
           {LANGUAGES.map(language => (
@@ -55,7 +61,7 @@ const LanguageSelection: React.FC = () => {
           ))}
         </div>
         
-        <Button onClick={handleContinue}>Continue</Button>
+        <Button onClick={handleContinue}>{t('language.continue')}</Button>
       </Card>
       
       <Footer />

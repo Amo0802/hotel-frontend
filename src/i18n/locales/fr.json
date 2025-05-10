@@ -1,0 +1,441 @@
+{
+  "common": {
+    "welcome": "Bienvenue dans notre hôtel",
+    "back": "Retour",
+    "save": "Enregistrer",
+    "cancel": "Annuler",
+    "submit": "Soumettre",
+    "loading": "Chargement...",
+    "error": "Une erreur est survenue",
+    "selectLanguage": "Choisir la langue",
+    "yes": "Oui",
+    "no": "Non",
+    "close": "Fermer",
+    "continue": "Continuer",
+    "backHome": "Retour à l'accueil"
+  },
+  "language": {
+    "title": "Choisissez votre langue",
+    "continue": "Continuer"
+  },
+  "login": {
+    "title": "Bienvenue",
+    "prompt": "Veuillez entrer votre code de réservation pour continuer",
+    "reservationCode": "Entrez votre code",
+    "forgotCode": "Où puis-je trouver mon code ?",
+    "login": "Connexion",
+    "firstTime": "Première fois ici ?",
+    "codeHelp": "Votre code de réservation vous a été envoyé dans la confirmation de réservation. Si vous arrivez aujourd'hui, vous pouvez également obtenir votre code à la réception."
+  },
+  "checkIn": {
+    "title": "Enregistrement",
+    "completeCheckIn": "Complétez votre enregistrement",
+    "confirmDetails": "Veuillez confirmer vos informations ci-dessous pour terminer le processus d'enregistrement.",
+    "steps": {
+      "reservation": "Réservation",
+      "checkIn": "Enregistrement",
+      "roomReady": "Chambre prête"
+    },
+    "fullName": "Nom complet",
+    "email": "Email",
+    "phone": "Numéro de téléphone",
+    "phonePrompt": "Entrez votre numéro de téléphone",
+    "idType": "Type de pièce d'identité",
+    "selectIdType": "Sélectionnez le type de pièce d'identité",
+    "passport": "Passeport",
+    "driversLicense": "Permis de conduire",
+    "nationalId": "Carte d'identité nationale",
+    "idNumber": "Numéro de pièce d'identité",
+    "idNumberPrompt": "Entrez votre numéro de pièce d'identité",
+    "arrival": "Heure d'arrivée estimée",
+    "arrivalOptions": {
+      "now": "J'arrive maintenant",
+      "oneHour": "Dans 1 heure",
+      "twoHours": "Dans 2 heures",
+      "today": "Plus tard aujourd'hui",
+      "tomorrow": "Demain"
+    },
+    "specialRequests": "Demandes spéciales",
+    "specialRequestsPrompt": "Des demandes spéciales pour votre séjour ?",
+    "completeButton": "Terminer l'enregistrement"
+  },
+  "home": {
+    "foodDining": "Restauration",
+    "foodDiningDesc": "Service en chambre, restaurant & réservations",
+    "amenities": "Équipements",
+    "amenitiesDesc": "Spa, piscine, salle de sport & autres installations",
+    "hotelMap": "Plan de l'hôtel",
+    "hotelMapDesc": "Naviguer dans notre établissement",
+    "localAttractions": "Attractions locales",
+    "localAttractionsDesc": "Découvrir les lieux & transports",
+    "cleanRoom": "Nettoyage de la chambre",
+    "cleanRoomDesc": "Demander un service de ménage",
+    "maintenance": "Maintenance",
+    "maintenanceDesc": "Signaler des problèmes dans votre chambre",
+    "dnd": "Ne pas déranger",
+    "dndDesc": "Activer le mode privé pour votre chambre",
+    "lostFound": "Objets perdus",
+    "lostFoundDesc": "Signaler ou réclamer des objets perdus",
+    "feedback": "Retours & Avis",
+    "feedbackDesc": "Partager votre expérience",
+    "askQuestion": "Poser une question",
+    "askQuestionDesc": "Obtenir de l'aide pour tout",
+    "checkOut": "Départ",
+    "checkOutDesc": "Terminer votre processus de départ"
+  },
+  "foodDining": {
+    "title": "Restauration",
+    "howEnjoyMeal": "Comment souhaitez-vous prendre votre repas ?",
+    "currentOrders": "Vos commandes en cours",
+    "roomService": "Service en chambre",
+    "roomServiceDesc": "Profitez d'un délicieux repas dans le confort de votre chambre",
+    "selectRoomService": "Sélectionner le service en chambre",
+    "restaurant": "Restaurant",
+    "restaurantDesc": "Commander pour manger sur place dans notre restaurant",
+    "selectRestaurant": "Sélectionner un restaurant",
+    "diningReservations": "Réservations de restaurant",
+    "diningReservationsDesc": "Réserver pour le petit-déjeuner, le déjeuner ou le dîner",
+    "makeReservation": "Faire une réservation"
+  },
+  "amenities": {
+    "title": "Équipements de l'hôtel",
+    "explore": "Découvrez nos installations et services",
+    "spa": "Spa & Bien-être",
+    "spaDesc": "Profitez de soins relaxants et de massages",
+    "pool": "Piscine",
+    "poolDesc": "Profitez de nos piscines intérieures et extérieures chauffées",
+    "gym": "Centre de fitness",
+    "gymDesc": "Équipement dernier cri et entraîneurs personnels",
+    "business": "Centre d'affaires",
+    "businessDesc": "Salles de réunion et services professionnels",
+    "hours": "Horaires",
+    "location": "Emplacement",
+    "bookSession": "Réserver une séance",
+    "reserveTime": "Réserver un créneau horaire",
+    "bookTrainer": "Réserver un entraîneur",
+    "bookRoom": "Réserver une salle"
+  },
+  "hotelMap": {
+    "title": "Plan de l'hôtel",
+    "findYourWay": "Trouvez votre chemin dans notre établissement",
+    "selectFloor": "Sélectionnez un étage :",
+    "floors": {
+      "lobby": "Hall d'entrée",
+      "level1": "Niveau 1",
+      "level2": "Niveau 2",
+      "level3": "Niveau 3",
+      "level4": "Niveau 4",
+      "level5": "Niveau 5"
+    },
+    "searchLocation": "Rechercher un lieu",
+    "legend": "Légende",
+    "locations": {
+      "pool": "Piscine",
+      "restaurant": "Restaurant",
+      "restrooms": "Toilettes",
+      "yourRoom": "Votre chambre",
+      "exit": "Sortie",
+      "elevator": "Ascenseur"
+    }
+  },
+  "localAttractions": {
+    "title": "Attractions locales",
+    "discover": "Découvrez le meilleur de notre région",
+    "filters": {
+      "distance": "Distance",
+      "all": "Tout",
+      "nearby": "À proximité",
+      "midRange": "5-10 km",
+      "farther": "10+ km",
+      "category": "Catégorie",
+      "museums": "Musées",
+      "parks": "Parcs",
+      "shopping": "Shopping",
+      "dining": "Restauration"
+    },
+    "getDirections": "Obtenir un itinéraire",
+    "distance": "Distance",
+    "reviews": "avis",
+    "transportation": "Options de transport",
+    "taxi": "Service de taxi",
+    "taxiDesc": "Réserver un taxi directement depuis l'hôtel",
+    "carRental": "Location de voiture",
+    "carRentalDesc": "Louer une voiture pour votre séjour",
+    "publicTransit": "Transport en commun",
+    "publicTransitDesc": "Informations sur les bus et trains",
+    "walkingTours": "Visites à pied",
+    "walkingToursDesc": "Options guidées ou libres",
+    "bookNow": "Réserver maintenant",
+    "viewOptions": "Voir les options",
+    "viewRoutes": "Voir les itinéraires",
+    "bookTour": "Réserver une visite"
+  },
+  "cleanRoom": {
+    "title": "Services de ménage",
+    "currentRequest": "Demande en cours",
+    "requestHousekeeping": "Demander un service de ménage",
+    "availableHours": "Notre équipe de ménage est disponible de 8h00 à 20h00 tous les jours.",
+    "serviceType": "Type de service",
+    "selectServiceType": "Sélectionner le type de service",
+    "services": {
+      "full": "Nettoyage complet",
+      "light": "Nettoyage léger",
+      "turndown": "Service du soir",
+      "towels": "Serviettes fraîches uniquement",
+      "supplies": "Réapprovisionnement"
+    },
+    "preferredTime": "Heure préférée",
+    "selectTime": "Sélectionner une heure",
+    "timeOptions": {
+      "asap": "Dès que possible",
+      "morning": "Matin (8h - 12h)",
+      "afternoon": "Après-midi (12h - 16h)",
+      "evening": "Soirée (16h - 20h)"
+    },
+    "specialInstructions": "Instructions spéciales",
+    "specialInstructionsPrompt": "Des demandes ou instructions particulières ?",
+    "notPresent": "Je ne serai pas présent pendant le nettoyage",
+    "submitRequest": "Soumettre la demande",
+    "regularSchedule": "Programme de nettoyage régulier",
+    "scheduledDays": "Votre chambre est programmée pour un nettoyage régulier les jours suivants :",
+    "daysOfWeek": {
+      "mon": "Lun",
+      "tue": "Mar",
+      "wed": "Mer",
+      "thu": "Jeu",
+      "fri": "Ven",
+      "sat": "Sam",
+      "sun": "Dim"
+    },
+    "adjustSchedule": "Je souhaite ajuster mon programme de nettoyage régulier"
+  },
+  "maintenance": {
+    "title": "Demande de maintenance",
+    "reportIssues": "Signaler tout problème dans votre chambre",
+    "openRequests": "Demandes ouvertes",
+    "reportIssue": "Signaler un problème",
+    "issueCategory": "Catégorie de problème",
+    "selectCategory": "Sélectionner une catégorie",
+    "categories": {
+      "ac": "Climatisation/Chauffage",
+      "electrical": "Électrique",
+      "plumbing": "Plomberie",
+      "tv": "TV/Divertissement",
+      "internet": "Internet/WiFi",
+      "furniture": "Meubles/Installations",
+      "other": "Autre"
+    },
+    "issueDescription": "Description du problème",
+    "descriptionPrompt": "Veuillez décrire le problème en détail",
+    "priority": "Priorité",
+    "priorityLevels": {
+      "low": "Faible - Pas urgent",
+      "medium": "Moyenne - Nécessite attention",
+      "high": "Élevée - Problème urgent"
+    },
+    "addPhotos": "Ajouter des photos",
+    "takePhoto": "Prendre une photo",
+    "uploadPhoto": "Télécharger une photo",
+    "authEntry": "J'autorise l'accès à ma chambre en mon absence",
+    "contactMethod": "Méthode de contact préférée",
+    "contactOptions": {
+      "app": "Notification de l'application",
+      "phone": "Appel téléphonique",
+      "sms": "SMS",
+      "email": "Email"
+    }
+  },
+  "lostFound": {
+    "title": "Objets perdus",
+    "reportLost": "Signaler un objet perdu",
+    "browseFound": "Parcourir les objets trouvés",
+    "myReports": "Mes signalements",
+    "itemNameType": "Nom/Type d'objet",
+    "itemNamePrompt": "ex. Portefeuille noir, Lunettes de soleil",
+    "description": "Description",
+    "descriptionPrompt": "Veuillez décrire l'objet en détail (couleur, marque, caractéristiques distinctives)",
+    "category": "Catégorie",
+    "selectCategory": "Sélectionner une catégorie",
+    "categories": {
+      "electronics": "Électronique",
+      "wallet": "Portefeuille/Sac à main",
+      "clothing": "Vêtements",
+      "jewelry": "Bijoux",
+      "keys": "Clés",
+      "documents": "Documents",
+      "other": "Autre"
+    },
+    "lastLocation": "Dernier lieu où vu",
+    "selectLocation": "Sélectionner un lieu",
+    "locations": {
+      "room": "Ma chambre",
+      "restaurant": "Restaurant",
+      "lobby": "Hall d'entrée",
+      "pool": "Zone piscine",
+      "spa": "Spa",
+      "gym": "Centre de fitness",
+      "other": "Autre"
+    },
+    "lastSeenTime": "Date/Heure où vu pour la dernière fois",
+    "addPhoto": "Ajouter une photo de l'objet (si disponible)",
+    "uploadPhoto": "Télécharger une photo",
+    "contactNumber": "Numéro de contact",
+    "contactNumberPrompt": "Votre numéro de téléphone",
+    "submitReport": "Soumettre le signalement",
+    "recentlyFound": "Objets récemment trouvés",
+    "claimInstructions": "Ces objets ont été remis à notre service des objets trouvés. Si vous voyez votre objet, veuillez le réclamer.",
+    "filterBy": "Filtrer par :",
+    "searchItems": "Rechercher des objets...",
+    "found": "Trouvé",
+    "claimItem": "Réclamer cet objet",
+    "yourReports": "Vos signalements",
+    "noReports": "Vous n'avez encore signalé aucun objet perdu.",
+    "reportStatus": {
+      "pending": "En attente",
+      "found": "Trouvé",
+      "closed": "Fermé"
+    },
+    "viewDetails": "Voir les détails",
+    "update": "Mettre à jour"
+  },
+  "feedback": {
+    "title": "Retours & Avis",
+    "valueOpinion": "Votre opinion compte pour nous",
+    "shareExperience": "Partagez votre expérience",
+    "helpImprove": "Vos retours nous aident à nous améliorer. Veuillez évaluer votre séjour et partager vos impressions.",
+    "overallExperience": "Expérience globale",
+    "categories": {
+      "room": "Qualité de la chambre",
+      "service": "Service",
+      "cleanliness": "Propreté",
+      "food": "Restauration",
+      "value": "Rapport qualité-prix"
+    },
+    "reviewTitle": "Titre de l'avis",
+    "reviewTitlePrompt": "Résumez votre expérience",
+    "yourReview": "Votre avis",
+    "reviewPrompt": "Dites-nous en plus sur votre séjour",
+    "likes": "Qu'avez-vous le plus apprécié ?",
+    "improvements": "Qu'est-ce qui pourrait être amélioré ?",
+    "addPhotos": "Ajouter des photos (facultatif)",
+    "uploadPhotos": "Télécharger des photos",
+    "anonymous": "Soumettre anonymement",
+    "submitReview": "Soumettre l'avis",
+    "quickFeedback": "Retour rapide",
+    "quickFeedbackPrompt": "Vous avez un commentaire ou une suggestion spécifique ? Faites-le nous savoir.",
+    "feedbackTypes": {
+      "compliment": "Compliment",
+      "suggestion": "Suggestion",
+      "issue": "Problème"
+    },
+    "sendFeedback": "Envoyer le retour",
+    "likeTags": {
+      "location": "Emplacement",
+      "staff": "Personnel",
+      "comfort": "Confort",
+      "amenities": "Équipements",
+      "food": "Nourriture",
+      "roomSize": "Taille de la chambre",
+      "cleanliness": "Propreté",
+      "value": "Rapport qualité-prix"
+    },
+    "improvementTags": {
+      "noise": "Bruit",
+      "bathroom": "Salle de bain",
+      "wifi": "WiFi",
+      "ac": "Climatisation",
+      "foodQuality": "Qualité de la nourriture",
+      "checkIn": "Processus d'enregistrement",
+      "roomService": "Service en chambre",
+      "pricing": "Tarification"
+    }
+  },
+  "chatbot": {
+    "title": "Poser une question",
+    "aiAssistant": "Notre assistant IA est là pour vous aider",
+    "greeting": "Bonjour ! Je suis votre assistant hôtel. Comment puis-je vous aider aujourd'hui ?",
+    "inputPlaceholder": "Tapez votre question ici...",
+    "quickQuestions": {
+      "breakfast": "À quelle heure est le petit-déjeuner ?",
+      "airport": "Comment se rendre à l'aéroport ?",
+      "fitness": "Où se trouve le centre de fitness ?",
+      "wifi": "Quel est le mot de passe WiFi ?"
+    }
+  },
+  "checkOut": {
+    "title": "Départ",
+    "steps": {
+      "review": "Vérification",
+      "payment": "Paiement",
+      "confirm": "Confirmation"
+    },
+    "staySummary": "Résumé du séjour",
+    "stayDetails": {
+      "guest": "Invité",
+      "room": "Chambre",
+      "checkIn": "Arrivée",
+      "checkOut": "Départ",
+      "lateCheckOut": "Départ tardif"
+    },
+    "checkOutOptions": {
+      "standard": "Standard (11h00)",
+      "1pm": "13h00 (+20€)",
+      "3pm": "15h00 (+40€)",
+      "6pm": "18h00 (+60€)"
+    },
+    "bill": {
+      "title": "Votre facture",
+      "description": "Description",
+      "date": "Date",
+      "amount": "Montant",
+      "subtotal": "Sous-total",
+      "tax": "Taxe",
+      "total": "Total",
+      "depositPaid": "Acompte payé",
+      "balanceDue": "Solde dû",
+      "viewDetailed": "Voir la facture détaillée",
+      "emailReceipt": "Recevoir la facture par email"
+    },
+    "paymentMethod": {
+      "title": "Méthode de paiement",
+      "cardOnFile": "Carte enregistrée",
+      "newCard": "Nouvelle carte",
+      "payFrontDesk": "Payer à la réception",
+      "cardNumber": "Numéro de carte",
+      "expiryDate": "Date d'expiration",
+      "cvc": "CVC",
+      "cardholderName": "Nom du titulaire"
+    },
+    "feedback": {
+      "howWasStay": "Comment s'est passé votre séjour chez nous ?",
+      "ratings": {
+        "poor": "Médiocre",
+        "average": "Moyen",
+        "good": "Bon",
+        "excellent": "Excellent"
+      },
+      "detailedFeedback": "Laisser un retour détaillé"
+    },
+    "actions": {
+      "notNow": "Pas maintenant",
+      "completeCheckOut": "Terminer le départ"
+    }
+  },
+  "roomService": {
+    "title": "Menu du service en chambre",
+    "yourOrder": "Votre commande",
+    "emptyOrder": "Votre commande est vide. Ajoutez des articles depuis le menu.",
+    "total": "Total :",
+    "placeOrder": "Passer la commande"
+  },
+  "notifications": {
+    "cleaningProgress": "Nettoyage de la chambre en cours",
+    "dndEnabled": "Ne pas déranger activé",
+    "disable": "Désactiver",
+    "inProgress": "En cours",
+    "eta": "HPA",
+    "cancel": "Annuler",
+    "update": "Mettre à jour",
+    "minutes": "minutes"
+  }
+}

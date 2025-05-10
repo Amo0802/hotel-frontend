@@ -1,11 +1,14 @@
+// src/pages/Maintenance.tsx
 import React, { useState, FormEvent, ChangeEvent } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { useAppState } from '../context/AppStateContext';
 import { requestMaintenance } from '../api/cleanMaintenanceServiceApi';
 import LogoPlaceholder from '../components/common/LogoPlaceholder';
 import Card from '../components/common/Card';
 import Button from '../components/common/Button';
 import Footer from '../components/common/Footer';
+import FloatingLanguageSelector from '../components/common/FloatingLanguageSelector';
 import '../styles/pages/Maintenance.css';
 
 interface MaintenanceFormData {
@@ -17,6 +20,7 @@ interface MaintenanceFormData {
 }
 
 const Maintenance: React.FC = () => {
+  const { t } = useTranslation();
   const navigate = useNavigate();
   const { activeRequests, addActiveRequest } = useAppState();
   const [loading, setLoading] = useState<boolean>(false);
@@ -72,13 +76,13 @@ const Maintenance: React.FC = () => {
           eta: response.data.eta
         });
         
-        alert('Your maintenance request has been submitted.');
+        alert(t('maintenance.submitRequest'));
         navigate('/home');
       } else {
-        setError(response.message || 'Failed to submit maintenance request.');
+        setError(response.message || t('common.error'));
       }
     } catch (err) {
-      const errorMessage = err instanceof Error ? err.message : 'An error occurred';
+      const errorMessage = err instanceof Error ? err.message : t('common.error');
       setError(errorMessage);
     } finally {
       setLoading(false);
@@ -87,42 +91,44 @@ const Maintenance: React.FC = () => {
 
   return (
     <div className="container">
+      <FloatingLanguageSelector />
+      
       <div className="logo-area">
         <LogoPlaceholder />
-        <h1 className="heading-primary">Maintenance Request</h1>
-        <p className="help-text text-center">Report any issues in your room</p>
+        <h1 className="heading-primary">{t('maintenance.title')}</h1>
+        <p className="help-text text-center">{t('maintenance.reportIssues')}</p>
       </div>
       
       {/* Status indicator for maintenance requests */}
       {activeRequests.maintenance && (
         <div className="status-indicator-box" id="maintenance-status">
-          <div className="status-indicator-title">Open Requests</div>
+          <div className="status-indicator-title">{t('maintenance.openRequests')}</div>
           <div className="status-item">
             <div className="status-icon maintenance">🔧</div>
             <div className="status-details">
               <h4>{activeRequests.maintenance.issue}</h4>
-              <p>Requested at {activeRequests.maintenance.requested}</p>
+              <p>{t('notifications.requested')} {activeRequests.maintenance.requested}</p>
               <div className="status-progress">
                 <div className="status-bar" style={{ width: '40%' }}></div>
               </div>
-              <p className="status-label">Technician assigned - ETA: Today, 2:00 PM</p>
+              <p className="status-label">{t('notifications.inProgress')} - {t('notifications.eta')}: Today, 2:00 PM</p>
             </div>
             <button 
               className="btn btn-text btn-update"
-              onClick={() => alert('Update request?')}
+              onClick={() => alert(t('notifications.update'))}
             >
-              Update
+              {t('notifications.update')}
             </button>
           </div>
         </div>
       )}
       
       <Card>
-        <h2 className="heading-secondary">Report an Issue</h2>
+        <h2 className="heading-secondary">{t('maintenance.reportIssue')}</h2>
         
         <form id="maintenance-form" onSubmit={handleSubmit}>
           <div className="form-group">
-            <label className="form-label" htmlFor="category">Issue Category</label>
+            <label className="form-label" htmlFor="category">{t('maintenance.issueCategory')}</label>
             <select 
               className="form-input" 
               id="category" 
@@ -130,23 +136,23 @@ const Maintenance: React.FC = () => {
               onChange={handleInputChange}
               required
             >
-              <option value="" disabled>Select Category</option>
-              <option value="ac">Air Conditioning/Heating</option>
-              <option value="electrical">Electrical</option>
-              <option value="plumbing">Plumbing</option>
-              <option value="tv">TV/Entertainment</option>
-              <option value="internet">Internet/WiFi</option>
-              <option value="furniture">Furniture/Fixtures</option>
-              <option value="other">Other</option>
+              <option value="" disabled>{t('maintenance.selectCategory')}</option>
+              <option value="ac">{t('maintenance.categories.ac')}</option>
+              <option value="electrical">{t('maintenance.categories.electrical')}</option>
+              <option value="plumbing">{t('maintenance.categories.plumbing')}</option>
+              <option value="tv">{t('maintenance.categories.tv')}</option>
+              <option value="internet">{t('maintenance.categories.internet')}</option>
+              <option value="furniture">{t('maintenance.categories.furniture')}</option>
+              <option value="other">{t('maintenance.categories.other')}</option>
             </select>
           </div>
           
           <div className="form-group">
-            <label className="form-label" htmlFor="description">Issue Description</label>
+            <label className="form-label" htmlFor="description">{t('maintenance.issueDescription')}</label>
             <textarea 
               className="form-input" 
               id="description" 
-              placeholder="Please describe the problem in detail" 
+              placeholder={t('maintenance.descriptionPrompt')} 
               rows={4}
               value={formData.description}
               onChange={handleInputChange}
@@ -155,7 +161,7 @@ const Maintenance: React.FC = () => {
           </div>
           
           <div className="form-group">
-            <label className="form-label">Priority</label>
+            <label className="form-label">{t('maintenance.priority')}</label>
             <div className="priority-options">
               <div className="priority-option">
                 <input 
@@ -166,7 +172,7 @@ const Maintenance: React.FC = () => {
                   checked={formData.priority === 'low'}
                   onChange={handlePriorityChange}
                 />
-                <label htmlFor="priority-low">Low - Not urgent</label>
+                <label htmlFor="priority-low">{t('maintenance.priorityLevels.low')}</label>
               </div>
               <div className="priority-option">
                 <input 
@@ -177,7 +183,7 @@ const Maintenance: React.FC = () => {
                   checked={formData.priority === 'medium'}
                   onChange={handlePriorityChange}
                 />
-                <label htmlFor="priority-medium">Medium - Needs attention</label>
+                <label htmlFor="priority-medium">{t('maintenance.priorityLevels.medium')}</label>
               </div>
               <div className="priority-option">
                 <input 
@@ -188,16 +194,16 @@ const Maintenance: React.FC = () => {
                   checked={formData.priority === 'high'}
                   onChange={handlePriorityChange}
                 />
-                <label htmlFor="priority-high">High - Urgent issue</label>
+                <label htmlFor="priority-high">{t('maintenance.priorityLevels.high')}</label>
               </div>
             </div>
           </div>
           
           <div className="form-group">
-            <label className="form-label">Add Photos</label>
+            <label className="form-label">{t('maintenance.addPhotos')}</label>
             <div className="photo-upload">
-              <Button variant="secondary" type="button">Take Photo</Button>
-              <Button variant="secondary" type="button">Upload Photo</Button>
+              <Button variant="secondary" type="button">{t('maintenance.takePhoto')}</Button>
+              <Button variant="secondary" type="button">{t('maintenance.uploadPhoto')}</Button>
             </div>
             <div className="photo-preview">
               {/* Preview of uploaded photos would appear here */}
@@ -213,33 +219,33 @@ const Maintenance: React.FC = () => {
               onChange={handleCheckboxChange}
             />
             <label htmlFor="notPresent" className="checkbox-label">
-              I authorize entry to my room in my absence
+              {t('maintenance.authEntry')}
             </label>
           </div>
           
           <div className="form-group">
-            <label className="form-label" htmlFor="contactMethod">Preferred Contact Method</label>
+            <label className="form-label" htmlFor="contactMethod">{t('maintenance.contactMethod')}</label>
             <select 
               className="form-input" 
               id="contactMethod"
               value={formData.contactMethod}
               onChange={handleInputChange}
             >
-              <option value="app">App Notification</option>
-              <option value="phone">Phone Call</option>
-              <option value="sms">SMS</option>
-              <option value="email">Email</option>
+              <option value="app">{t('maintenance.contactOptions.app')}</option>
+              <option value="phone">{t('maintenance.contactOptions.phone')}</option>
+              <option value="sms">{t('maintenance.contactOptions.sms')}</option>
+              <option value="email">{t('maintenance.contactOptions.email')}</option>
             </select>
           </div>
           
           {error && <div className="error-message">{error}</div>}
           
-          <Button type="submit" loading={loading}>Submit Request</Button>
+          <Button type="submit" loading={loading}>{t('common.submit')}</Button>
         </form>
       </Card>
       
       <Button variant="text" onClick={() => navigate('/home')}>
-        ← Back to Home
+        ← {t('common.backHome')}
       </Button>
       
       <Footer />

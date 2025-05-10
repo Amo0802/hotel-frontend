@@ -1,0 +1,441 @@
+{
+  "common": {
+    "welcome": "Welcome to Our Hotel",
+    "back": "Back",
+    "save": "Save",
+    "cancel": "Cancel",
+    "submit": "Submit",
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "selectLanguage": "Select Language",
+    "yes": "Yes",
+    "no": "No",
+    "close": "Close",
+    "continue": "Continue",
+    "backHome": "Back to Home"
+  },
+  "language": {
+    "title": "Select Your Language",
+    "continue": "Continue"
+  },
+  "login": {
+    "title": "Welcome",
+    "prompt": "Please enter your reservation code to continue",
+    "reservationCode": "Enter your code",
+    "forgotCode": "Where can I find my code?",
+    "login": "Login",
+    "firstTime": "First time here?",
+    "codeHelp": "Your reservation code was sent to you in your booking confirmation. If you're checking in today, you can also get your code at the reception."
+  },
+  "checkIn": {
+    "title": "Check-In",
+    "completeCheckIn": "Complete Your Check-In",
+    "confirmDetails": "Please confirm your details below to complete the check-in process.",
+    "steps": {
+      "reservation": "Reservation",
+      "checkIn": "Check-In",
+      "roomReady": "Room Ready"
+    },
+    "fullName": "Full Name",
+    "email": "Email",
+    "phone": "Phone Number",
+    "phonePrompt": "Enter your phone number",
+    "idType": "ID Type",
+    "selectIdType": "Select ID Type",
+    "passport": "Passport",
+    "driversLicense": "Driver's License",
+    "nationalId": "National ID",
+    "idNumber": "ID Number",
+    "idNumberPrompt": "Enter your ID number",
+    "arrival": "Estimated Arrival Time",
+    "arrivalOptions": {
+      "now": "I'm arriving now",
+      "oneHour": "Within 1 hour",
+      "twoHours": "Within 2 hours",
+      "today": "Later today",
+      "tomorrow": "Tomorrow"
+    },
+    "specialRequests": "Special Requests",
+    "specialRequestsPrompt": "Any special requests for your stay?",
+    "completeButton": "Complete Check-In"
+  },
+  "home": {
+    "foodDining": "Food & Dining",
+    "foodDiningDesc": "Room service, restaurant, & reservations",
+    "amenities": "Amenities",
+    "amenitiesDesc": "Spa, pool, gym & other facilities",
+    "hotelMap": "Hotel Map",
+    "hotelMapDesc": "Navigate around our property",
+    "localAttractions": "Local Attractions",
+    "localAttractionsDesc": "Discover places & transportation",
+    "cleanRoom": "Clean Room",
+    "cleanRoomDesc": "Request housekeeping service",
+    "maintenance": "Maintenance",
+    "maintenanceDesc": "Report issues in your room",
+    "dnd": "Do Not Disturb",
+    "dndDesc": "Toggle privacy mode for your room",
+    "lostFound": "Lost & Found",
+    "lostFoundDesc": "Report or claim lost items",
+    "feedback": "Feedback & Reviews",
+    "feedbackDesc": "Share your experience",
+    "askQuestion": "Ask a Question",
+    "askQuestionDesc": "Get help with anything",
+    "checkOut": "Check Out",
+    "checkOutDesc": "Complete your check-out process"
+  },
+  "foodDining": {
+    "title": "Food & Dining",
+    "howEnjoyMeal": "How would you like to enjoy your meal?",
+    "currentOrders": "Your Current Orders",
+    "roomService": "Room Service",
+    "roomServiceDesc": "Enjoy a delicious meal in the comfort of your room",
+    "selectRoomService": "Select Room Service",
+    "restaurant": "Restaurant",
+    "restaurantDesc": "Order for dine-in at our restaurant",
+    "selectRestaurant": "Select Restaurant",
+    "diningReservations": "Dining Reservations",
+    "diningReservationsDesc": "Make a reservation for breakfast, lunch or dinner",
+    "makeReservation": "Make Reservation"
+  },
+  "amenities": {
+    "title": "Hotel Amenities",
+    "explore": "Explore our facilities and services",
+    "spa": "Spa & Wellness",
+    "spaDesc": "Indulge in relaxing treatments and massages",
+    "pool": "Swimming Pool",
+    "poolDesc": "Enjoy our heated indoor and outdoor pools",
+    "gym": "Fitness Center",
+    "gymDesc": "State-of-the-art equipment and personal trainers",
+    "business": "Business Center",
+    "businessDesc": "Meeting rooms and business services",
+    "hours": "Hours",
+    "location": "Location",
+    "bookSession": "Book a Session",
+    "reserveTime": "Reserve Time Slot",
+    "bookTrainer": "Book a Trainer",
+    "bookRoom": "Book a Room"
+  },
+  "hotelMap": {
+    "title": "Hotel Map",
+    "findYourWay": "Find your way around our property",
+    "selectFloor": "Select Floor:",
+    "floors": {
+      "lobby": "Lobby",
+      "level1": "Level 1",
+      "level2": "Level 2",
+      "level3": "Level 3",
+      "level4": "Level 4",
+      "level5": "Level 5"
+    },
+    "searchLocation": "Search for a location",
+    "legend": "Legend",
+    "locations": {
+      "pool": "Pool",
+      "restaurant": "Restaurant",
+      "restrooms": "Restrooms",
+      "yourRoom": "Your Room",
+      "exit": "Exit",
+      "elevator": "Elevator"
+    }
+  },
+  "localAttractions": {
+    "title": "Local Attractions",
+    "discover": "Discover the best of our area",
+    "filters": {
+      "distance": "Distance",
+      "all": "All",
+      "nearby": "Nearby",
+      "midRange": "5-10 km",
+      "farther": "10+ km",
+      "category": "Category",
+      "museums": "Museums",
+      "parks": "Parks",
+      "shopping": "Shopping",
+      "dining": "Dining"
+    },
+    "getDirections": "Get Directions",
+    "distance": "Distance",
+    "reviews": "reviews",
+    "transportation": "Transportation Options",
+    "taxi": "Taxi Service",
+    "taxiDesc": "Book a taxi directly from the hotel",
+    "carRental": "Car Rental",
+    "carRentalDesc": "Rent a car for your stay",
+    "publicTransit": "Public Transit",
+    "publicTransitDesc": "Information about buses and trains",
+    "walkingTours": "Walking Tours",
+    "walkingToursDesc": "Guided and self-guided options",
+    "bookNow": "Book Now",
+    "viewOptions": "View Options",
+    "viewRoutes": "View Routes",
+    "bookTour": "Book Tour"
+  },
+  "cleanRoom": {
+    "title": "Housekeeping Services",
+    "currentRequest": "Current Request",
+    "requestHousekeeping": "Request Housekeeping",
+    "availableHours": "Our housekeeping team is available from 8:00 AM to 8:00 PM daily.",
+    "serviceType": "Service Type",
+    "selectServiceType": "Select Service Type",
+    "services": {
+      "full": "Full Cleaning",
+      "light": "Light Cleaning",
+      "turndown": "Turndown Service",
+      "towels": "Fresh Towels Only",
+      "supplies": "Restock Supplies"
+    },
+    "preferredTime": "Preferred Time",
+    "selectTime": "Select Time",
+    "timeOptions": {
+      "asap": "As Soon As Possible",
+      "morning": "Morning (8AM - 12PM)",
+      "afternoon": "Afternoon (12PM - 4PM)",
+      "evening": "Evening (4PM - 8PM)"
+    },
+    "specialInstructions": "Special Instructions",
+    "specialInstructionsPrompt": "Any special requests or instructions?",
+    "notPresent": "I will not be present during cleaning",
+    "submitRequest": "Submit Request",
+    "regularSchedule": "Regular Cleaning Schedule",
+    "scheduledDays": "Your room is scheduled for regular cleaning on the following days:",
+    "daysOfWeek": {
+      "mon": "Mon",
+      "tue": "Tue",
+      "wed": "Wed",
+      "thu": "Thu",
+      "fri": "Fri",
+      "sat": "Sat",
+      "sun": "Sun"
+    },
+    "adjustSchedule": "I'd like to adjust my regular cleaning schedule"
+  },
+  "maintenance": {
+    "title": "Maintenance Request",
+    "reportIssues": "Report any issues in your room",
+    "openRequests": "Open Requests",
+    "reportIssue": "Report an Issue",
+    "issueCategory": "Issue Category",
+    "selectCategory": "Select Category",
+    "categories": {
+      "ac": "Air Conditioning/Heating",
+      "electrical": "Electrical",
+      "plumbing": "Plumbing",
+      "tv": "TV/Entertainment",
+      "internet": "Internet/WiFi",
+      "furniture": "Furniture/Fixtures",
+      "other": "Other"
+    },
+    "issueDescription": "Issue Description",
+    "descriptionPrompt": "Please describe the problem in detail",
+    "priority": "Priority",
+    "priorityLevels": {
+      "low": "Low - Not urgent",
+      "medium": "Medium - Needs attention",
+      "high": "High - Urgent issue"
+    },
+    "addPhotos": "Add Photos",
+    "takePhoto": "Take Photo",
+    "uploadPhoto": "Upload Photo",
+    "authEntry": "I authorize entry to my room in my absence",
+    "contactMethod": "Preferred Contact Method",
+    "contactOptions": {
+      "app": "App Notification",
+      "phone": "Phone Call",
+      "sms": "SMS",
+      "email": "Email"
+    }
+  },
+  "lostFound": {
+    "title": "Lost & Found",
+    "reportLost": "Report Lost Item",
+    "browseFound": "Browse Found Items",
+    "myReports": "My Reports",
+    "itemNameType": "Item Name/Type",
+    "itemNamePrompt": "e.g. Black Wallet, Sunglasses",
+    "description": "Description",
+    "descriptionPrompt": "Please describe the item in detail (color, brand, distinctive features)",
+    "category": "Category",
+    "selectCategory": "Select Category",
+    "categories": {
+      "electronics": "Electronics",
+      "wallet": "Wallet/Purse",
+      "clothing": "Clothing",
+      "jewelry": "Jewelry",
+      "keys": "Keys",
+      "documents": "Documents",
+      "other": "Other"
+    },
+    "lastLocation": "Last Seen Location",
+    "selectLocation": "Select Location",
+    "locations": {
+      "room": "My Room",
+      "restaurant": "Restaurant",
+      "lobby": "Lobby",
+      "pool": "Pool Area",
+      "spa": "Spa",
+      "gym": "Fitness Center",
+      "other": "Other"
+    },
+    "lastSeenTime": "Last Seen Date/Time",
+    "addPhoto": "Add Photo of Item (if available)",
+    "uploadPhoto": "Upload Photo",
+    "contactNumber": "Contact Number",
+    "contactNumberPrompt": "Your phone number",
+    "submitReport": "Submit Report",
+    "recentlyFound": "Recently Found Items",
+    "claimInstructions": "These items have been turned in to our Lost & Found department. If you see your item, please claim it.",
+    "filterBy": "Filter by:",
+    "searchItems": "Search items...",
+    "found": "Found",
+    "claimItem": "Claim This Item",
+    "yourReports": "Your Reports",
+    "noReports": "You haven't reported any lost items yet.",
+    "reportStatus": {
+      "pending": "Pending",
+      "found": "Found",
+      "closed": "Closed"
+    },
+    "viewDetails": "View Details",
+    "update": "Update"
+  },
+  "feedback": {
+    "title": "Feedback & Reviews",
+    "valueOpinion": "We value your opinion",
+    "shareExperience": "Share Your Experience",
+    "helpImprove": "Your feedback helps us improve. Please rate your stay and share your thoughts.",
+    "overallExperience": "Overall Experience",
+    "categories": {
+      "room": "Room Quality",
+      "service": "Service",
+      "cleanliness": "Cleanliness",
+      "food": "Food & Dining",
+      "value": "Value for Money"
+    },
+    "reviewTitle": "Review Title",
+    "reviewTitlePrompt": "Summarize your experience",
+    "yourReview": "Your Review",
+    "reviewPrompt": "Tell us more about your stay",
+    "likes": "What did you like most?",
+    "improvements": "What could be improved?",
+    "addPhotos": "Add Photos (Optional)",
+    "uploadPhotos": "Upload Photos",
+    "anonymous": "Submit anonymously",
+    "submitReview": "Submit Review",
+    "quickFeedback": "Quick Feedback",
+    "quickFeedbackPrompt": "Have a specific comment or suggestion? Let us know.",
+    "feedbackTypes": {
+      "compliment": "Compliment",
+      "suggestion": "Suggestion",
+      "issue": "Issue"
+    },
+    "sendFeedback": "Send Feedback",
+    "likeTags": {
+      "location": "Location",
+      "staff": "Staff",
+      "comfort": "Comfort",
+      "amenities": "Amenities",
+      "food": "Food",
+      "roomSize": "Room Size",
+      "cleanliness": "Cleanliness",
+      "value": "Value"
+    },
+    "improvementTags": {
+      "noise": "Noise",
+      "bathroom": "Bathroom",
+      "wifi": "WiFi",
+      "ac": "Air Conditioning",
+      "foodQuality": "Food Quality",
+      "checkIn": "Check-in Process",
+      "roomService": "Room Service",
+      "pricing": "Pricing"
+    }
+  },
+  "chatbot": {
+    "title": "Ask a Question",
+    "aiAssistant": "Our AI assistant is here to help",
+    "greeting": "Hello! I'm your hotel assistant. How can I help you today?",
+    "inputPlaceholder": "Type your question here...",
+    "quickQuestions": {
+      "breakfast": "What time is breakfast?",
+      "airport": "How do I get to the airport?",
+      "fitness": "Where is the fitness center?",
+      "wifi": "What's the WiFi password?"
+    }
+  },
+  "checkOut": {
+    "title": "Check-Out",
+    "steps": {
+      "review": "Review",
+      "payment": "Payment",
+      "confirm": "Confirm"
+    },
+    "staySummary": "Stay Summary",
+    "stayDetails": {
+      "guest": "Guest",
+      "room": "Room",
+      "checkIn": "Check-In",
+      "checkOut": "Check-Out",
+      "lateCheckOut": "Late Check-Out"
+    },
+    "checkOutOptions": {
+      "standard": "Standard (11:00 AM)",
+      "1pm": "1:00 PM (+$20)",
+      "3pm": "3:00 PM (+$40)",
+      "6pm": "6:00 PM (+$60)"
+    },
+    "bill": {
+      "title": "Your Bill",
+      "description": "Description",
+      "date": "Date",
+      "amount": "Amount",
+      "subtotal": "Subtotal",
+      "tax": "Tax",
+      "total": "Total",
+      "depositPaid": "Deposit Paid",
+      "balanceDue": "Balance Due",
+      "viewDetailed": "View Detailed Bill",
+      "emailReceipt": "Email Receipt"
+    },
+    "paymentMethod": {
+      "title": "Payment Method",
+      "cardOnFile": "Card on File",
+      "newCard": "New Card",
+      "payFrontDesk": "Pay at Front Desk",
+      "cardNumber": "Card Number",
+      "expiryDate": "Expiry Date",
+      "cvc": "CVC",
+      "cardholderName": "Cardholder Name"
+    },
+    "feedback": {
+      "howWasStay": "How was your stay with us?",
+      "ratings": {
+        "poor": "Poor",
+        "average": "Average",
+        "good": "Good",
+        "excellent": "Excellent"
+      },
+      "detailedFeedback": "Leave detailed feedback"
+    },
+    "actions": {
+      "notNow": "Not Now",
+      "completeCheckOut": "Complete Check-Out"
+    }
+  },
+  "roomService": {
+    "title": "Room Service Menu",
+    "yourOrder": "Your Order",
+    "emptyOrder": "Your order is empty. Add items from the menu.",
+    "total": "Total:",
+    "placeOrder": "Place Order"
+  },
+  "notifications": {
+    "cleaningProgress": "Room Cleaning in Progress",
+    "dndEnabled": "Do Not Disturb Enabled",
+    "disable": "Disable",
+    "inProgress": "In progress",
+    "eta": "ETA",
+    "cancel": "Cancel",
+    "update": "Update",
+    "minutes": "minutes"
+  }
+}

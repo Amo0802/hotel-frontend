@@ -1,9 +1,12 @@
+// src/pages/Feedback.tsx
 import React, { useState, FormEvent, ChangeEvent } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import LogoPlaceholder from '../components/common/LogoPlaceholder';
 import Card from '../components/common/Card';
 import Button from '../components/common/Button';
 import Footer from '../components/common/Footer';
+import FloatingLanguageSelector from '../components/common/FloatingLanguageSelector';
 import '../styles/pages/Feedback.css';
 
 interface FeedbackFormData {
@@ -20,12 +23,8 @@ interface FeedbackFormData {
   improvements: string[];
 }
 
-interface QuickFeedback {
-  type: string;
-  text: string;
-}
-
 const Feedback: React.FC = () => {
+  const { t } = useTranslation();
   const navigate = useNavigate();
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
@@ -51,8 +50,15 @@ const Feedback: React.FC = () => {
   });
 
   // Like and improvement tags
-  const likeTags = ['Location', 'Staff', 'Comfort', 'Amenities', 'Food', 'Room Size', 'Cleanliness', 'Value'];
-  const improvementTags = ['Noise', 'Bathroom', 'WiFi', 'Air Conditioning', 'Food Quality', 'Check-in Process', 'Room Service', 'Pricing'];
+  const likeTags = [
+    'location', 'staff', 'comfort', 'amenities', 
+    'food', 'roomSize', 'cleanliness', 'value'
+  ];
+  
+  const improvementTags = [
+    'noise', 'bathroom', 'wifi', 'ac', 
+    'foodQuality', 'checkIn', 'roomService', 'pricing'
+  ];
 
   const handleInputChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>): void => {
     const { id, value } = e.target;
@@ -108,11 +114,11 @@ const Feedback: React.FC = () => {
       // In a real app, you would call an API to submit the feedback
       // For now, we'll simulate a successful submission
       setTimeout(() => {
-        alert('Thank you for your feedback!');
+        alert(t('feedback.submitReview'));
         navigate('/home');
       }, 1000);
     } catch (err) {
-      const errorMessage = err instanceof Error ? err.message : 'An error occurred';
+      const errorMessage = err instanceof Error ? err.message : t('common.error');
       setError(errorMessage);
       setLoading(false);
     }
@@ -125,31 +131,33 @@ const Feedback: React.FC = () => {
 
   const handleQuickFeedbackSubmit = (): void => {
     if (!quickFeedbackText.trim()) {
-      alert('Please enter your feedback.');
+      alert(t('feedback.quickFeedbackPrompt'));
       return;
     }
     
     // In a real app, you would call an API to submit the quick feedback
-    alert('Thank you for your feedback!');
+    alert(t('feedback.sendFeedback'));
     setShowQuickFeedbackForm(false);
     setQuickFeedbackText('');
   };
 
   return (
     <div className="container">
+      <FloatingLanguageSelector />
+      
       <div className="logo-area">
         <LogoPlaceholder />
-        <h1 className="heading-primary">Feedback & Reviews</h1>
-        <p className="help-text text-center">We value your opinion</p>
+        <h1 className="heading-primary">{t('feedback.title')}</h1>
+        <p className="help-text text-center">{t('feedback.valueOpinion')}</p>
       </div>
       
       <Card>
-        <h2 className="heading-secondary">Share Your Experience</h2>
-        <p className="help-text">Your feedback helps us improve. Please rate your stay and share your thoughts.</p>
+        <h2 className="heading-secondary">{t('feedback.shareExperience')}</h2>
+        <p className="help-text">{t('feedback.helpImprove')}</p>
         
         <form id="feedback-form" onSubmit={handleSubmit}>
           <div className="form-group">
-            <label className="form-label">Overall Experience</label>
+            <label className="form-label">{t('feedback.overallExperience')}</label>
             <div className="rating-stars-input">
               {[1, 2, 3, 4, 5].map(star => (
                 <div 
@@ -166,7 +174,7 @@ const Feedback: React.FC = () => {
           
           <div className="category-ratings">
             <div className="category-rating">
-              <label>Room Quality</label>
+              <label>{t('feedback.categories.room')}</label>
               <div className="compact-rating">
                 {[1, 2, 3, 4, 5].map(star => (
                   <div 
@@ -182,7 +190,7 @@ const Feedback: React.FC = () => {
             </div>
             
             <div className="category-rating">
-              <label>Service</label>
+              <label>{t('feedback.categories.service')}</label>
               <div className="compact-rating">
                 {[1, 2, 3, 4, 5].map(star => (
                   <div 
@@ -198,7 +206,7 @@ const Feedback: React.FC = () => {
             </div>
             
             <div className="category-rating">
-              <label>Cleanliness</label>
+              <label>{t('feedback.categories.cleanliness')}</label>
               <div className="compact-rating">
                 {[1, 2, 3, 4, 5].map(star => (
                   <div 
@@ -214,7 +222,7 @@ const Feedback: React.FC = () => {
             </div>
             
             <div className="category-rating">
-              <label>Food & Dining</label>
+              <label>{t('feedback.categories.food')}</label>
               <div className="compact-rating">
                 {[1, 2, 3, 4, 5].map(star => (
                   <div 
@@ -230,7 +238,7 @@ const Feedback: React.FC = () => {
             </div>
             
             <div className="category-rating">
-              <label>Value for Money</label>
+              <label>{t('feedback.categories.value')}</label>
               <div className="compact-rating">
                 {[1, 2, 3, 4, 5].map(star => (
                   <div 
@@ -247,23 +255,23 @@ const Feedback: React.FC = () => {
           </div>
           
           <div className="form-group">
-            <label className="form-label" htmlFor="title">Review Title</label>
+            <label className="form-label" htmlFor="title">{t('feedback.reviewTitle')}</label>
             <input 
               type="text" 
               className="form-input" 
               id="title"
-              placeholder="Summarize your experience"
+              placeholder={t('feedback.reviewTitlePrompt')}
               value={formData.title}
               onChange={handleInputChange}
             />
           </div>
           
           <div className="form-group">
-            <label className="form-label" htmlFor="review">Your Review</label>
+            <label className="form-label" htmlFor="review">{t('feedback.yourReview')}</label>
             <textarea 
               className="form-input" 
               id="review"
-              placeholder="Tell us more about your stay" 
+              placeholder={t('feedback.reviewPrompt')} 
               rows={4}
               value={formData.review}
               onChange={handleInputChange}
@@ -271,7 +279,7 @@ const Feedback: React.FC = () => {
           </div>
           
           <div className="form-group">
-            <label className="form-label">What did you like most?</label>
+            <label className="form-label">{t('feedback.likes')}</label>
             <div className="tag-selector">
               {likeTags.map(tag => (
                 <div 
@@ -279,14 +287,14 @@ const Feedback: React.FC = () => {
                   className={`tag ${formData.likes.includes(tag) ? 'active' : ''}`}
                   onClick={() => handleTagClick(tag, 'likes')}
                 >
-                  {tag}
+                  {t(`feedback.likeTags.${tag}`)}
                 </div>
               ))}
             </div>
           </div>
           
           <div className="form-group">
-            <label className="form-label">What could be improved?</label>
+            <label className="form-label">{t('feedback.improvements')}</label>
             <div className="tag-selector">
               {improvementTags.map(tag => (
                 <div 
@@ -294,16 +302,16 @@ const Feedback: React.FC = () => {
                   className={`tag ${formData.improvements.includes(tag) ? 'active' : ''}`}
                   onClick={() => handleTagClick(tag, 'improvements')}
                 >
-                  {tag}
+                  {t(`feedback.improvementTags.${tag}`)}
                 </div>
               ))}
             </div>
           </div>
           
           <div className="form-group">
-            <label className="form-label">Add Photos (Optional)</label>
+            <label className="form-label">{t('feedback.addPhotos')}</label>
             <div className="photo-upload">
-              <Button variant="secondary" type="button">Upload Photos</Button>
+              <Button variant="secondary" type="button">{t('feedback.uploadPhotos')}</Button>
             </div>
           </div>
           
@@ -316,19 +324,19 @@ const Feedback: React.FC = () => {
               onChange={handleCheckboxChange}
             />
             <label htmlFor="anonymous" className="checkbox-label">
-              Submit anonymously
+              {t('feedback.anonymous')}
             </label>
           </div>
           
           {error && <div className="error-message">{error}</div>}
           
-          <Button type="submit" loading={loading}>Submit Review</Button>
+          <Button type="submit" loading={loading}>{t('feedback.submitReview')}</Button>
         </form>
       </Card>
       
       <Card>
-        <h2 className="heading-secondary">Quick Feedback</h2>
-        <p className="help-text">Have a specific comment or suggestion? Let us know.</p>
+        <h2 className="heading-secondary">{t('feedback.quickFeedback')}</h2>
+        <p className="help-text">{t('feedback.quickFeedbackPrompt')}</p>
         
         <div className="quick-feedback-options">
           <button 
@@ -336,21 +344,21 @@ const Feedback: React.FC = () => {
             onClick={() => handleQuickFeedbackClick('compliment')}
           >
             <span className="feedback-icon">👏</span>
-            <span>Compliment</span>
+            <span>{t('feedback.feedbackTypes.compliment')}</span>
           </button>
           <button 
             className={`quick-feedback-btn ${quickFeedbackType === 'suggestion' ? 'active' : ''}`}
             onClick={() => handleQuickFeedbackClick('suggestion')}
           >
             <span className="feedback-icon">💡</span>
-            <span>Suggestion</span>
+            <span>{t('feedback.feedbackTypes.suggestion')}</span>
           </button>
           <button 
             className={`quick-feedback-btn ${quickFeedbackType === 'issue' ? 'active' : ''}`}
             onClick={() => handleQuickFeedbackClick('issue')}
           >
             <span className="feedback-icon">⚠️</span>
-            <span>Issue</span>
+            <span>{t('feedback.feedbackTypes.issue')}</span>
           </button>
         </div>
         
@@ -358,18 +366,18 @@ const Feedback: React.FC = () => {
           <div className="quick-feedback-form">
             <textarea 
               className="form-input" 
-              placeholder={`Tell us about your ${quickFeedbackType}...`} 
+              placeholder={`${t(`feedback.feedbackTypes.${quickFeedbackType}`)}...`} 
               rows={3}
               value={quickFeedbackText}
               onChange={(e) => setQuickFeedbackText(e.target.value)}
             ></textarea>
-            <Button onClick={handleQuickFeedbackSubmit}>Send Feedback</Button>
+            <Button onClick={handleQuickFeedbackSubmit}>{t('feedback.sendFeedback')}</Button>
           </div>
         )}
       </Card>
       
       <Button variant="text" onClick={() => navigate('/home')}>
-        ← Back to Home
+        ← {t('common.backHome')}
       </Button>
       
       <Footer />

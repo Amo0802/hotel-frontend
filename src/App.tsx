@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { useAuth } from './context/AuthContext';
+import { useAppState } from './context/AppStateContext';
 import LanguageSelection from './pages/LanguageSelection';
 import Login from './pages/Login';
 import CheckIn from './pages/CheckIn';
@@ -16,11 +18,25 @@ import LostFound from './pages/LostFound';
 import Feedback from './pages/Feedback';
 import Chatbot from './pages/Chatbot';
 import CheckOut from './pages/CheckOut';
+import LanguageSelector from './components/common/FloatingLanguageSelector';
+import './i18n'; // Import i18n configuration
 import './styles/global.css';
 
 const App: React.FC = () => {
   const { isLoggedIn, isCheckedIn } = useAuth();
+  const { currentLanguage } = useAppState();
+  const { i18n } = useTranslation();
+  
+  // Sync language between i18n and AppState
+  useEffect(() => {
+    if (i18n.language !== currentLanguage) {
+      i18n.changeLanguage(currentLanguage);
+    }
+  }, [currentLanguage, i18n]);
 
+  // Check if user is on the language selection page
+  const isLanguagePage = window.location.pathname === '/';
+  
   return (
     <Router>
       <Routes>

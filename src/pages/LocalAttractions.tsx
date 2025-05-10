@@ -1,8 +1,11 @@
+// src/pages/LocalAttractions.tsx
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import LogoPlaceholder from '../components/common/LogoPlaceholder';
 import Button from '../components/common/Button';
 import Footer from '../components/common/Footer';
+import FloatingLanguageSelector from '../components/common/FloatingLanguageSelector';
 import '../styles/pages/LocalAttractions.css';
 
 interface Attraction {
@@ -26,6 +29,7 @@ interface TransportOption {
 }
 
 const LocalAttractions: React.FC = () => {
+  const { t } = useTranslation();
   const navigate = useNavigate();
   const [distanceFilter, setDistanceFilter] = useState<string>('all');
   const [categoryFilter, setCategoryFilter] = useState<string>('all');
@@ -39,7 +43,7 @@ const LocalAttractions: React.FC = () => {
       rating: 4,
       reviewCount: 238,
       actions: [
-        { text: 'Get Directions', primary: true },
+        { text: t('localAttractions.getDirections'), primary: true },
         { text: 'Book Tickets', primary: false }
       ],
       category: 'museums',
@@ -53,7 +57,7 @@ const LocalAttractions: React.FC = () => {
       rating: 5,
       reviewCount: 412,
       actions: [
-        { text: 'Get Directions', primary: true }
+        { text: t('localAttractions.getDirections'), primary: true }
       ],
       category: 'parks',
       image: '/api/placeholder/400/200'
@@ -66,7 +70,7 @@ const LocalAttractions: React.FC = () => {
       rating: 4,
       reviewCount: 178,
       actions: [
-        { text: 'Get Directions', primary: true },
+        { text: t('localAttractions.getDirections'), primary: true },
         { text: 'View Store List', primary: false }
       ],
       category: 'shopping',
@@ -78,30 +82,30 @@ const LocalAttractions: React.FC = () => {
     {
       id: 'taxi',
       icon: '🚕',
-      title: 'Taxi Service',
-      description: 'Book a taxi directly from the hotel',
-      action: 'Book Now'
+      title: t('localAttractions.taxi'),
+      description: t('localAttractions.taxiDesc'),
+      action: t('localAttractions.bookNow')
     },
     {
       id: 'car-rental',
       icon: '🚗',
-      title: 'Car Rental',
-      description: 'Rent a car for your stay',
-      action: 'View Options'
+      title: t('localAttractions.carRental'),
+      description: t('localAttractions.carRentalDesc'),
+      action: t('localAttractions.viewOptions')
     },
     {
       id: 'public-transit',
       icon: '🚇',
-      title: 'Public Transit',
-      description: 'Information about buses and trains',
-      action: 'View Routes'
+      title: t('localAttractions.publicTransit'),
+      description: t('localAttractions.publicTransitDesc'),
+      action: t('localAttractions.viewRoutes')
     },
     {
       id: 'walking-tours',
       icon: '🚶',
-      title: 'Walking Tours',
-      description: 'Guided and self-guided options',
-      action: 'Book Tour'
+      title: t('localAttractions.walkingTours'),
+      description: t('localAttractions.walkingToursDesc'),
+      action: t('localAttractions.bookTour')
     }
   ];
 
@@ -143,75 +147,77 @@ const LocalAttractions: React.FC = () => {
 
   return (
     <div className="container">
+      <FloatingLanguageSelector />
+      
       <div className="logo-area">
         <LogoPlaceholder />
-        <h1 className="heading-primary">Local Attractions</h1>
-        <p className="help-text text-center">Discover the best of our area</p>
+        <h1 className="heading-primary">{t('localAttractions.title')}</h1>
+        <p className="help-text text-center">{t('localAttractions.discover')}</p>
       </div>
       
       <div className="attraction-filters">
         <div className="filter-group">
-          <label>Distance</label>
+          <label>{t('localAttractions.filters.distance')}</label>
           <div className="filter-options">
             <div 
               className={`filter-option ${distanceFilter === 'all' ? 'active' : ''}`}
               onClick={() => handleFilterChange('distance', 'all')}
             >
-              All
+              {t('localAttractions.filters.all')}
             </div>
             <div 
               className={`filter-option ${distanceFilter === 'nearby' ? 'active' : ''}`}
               onClick={() => handleFilterChange('distance', 'nearby')}
             >
-              Nearby
+              {t('localAttractions.filters.nearby')}
             </div>
             <div 
               className={`filter-option ${distanceFilter === '5-10 km' ? 'active' : ''}`}
               onClick={() => handleFilterChange('distance', '5-10 km')}
             >
-              5-10 km
+              {t('localAttractions.filters.midRange')}
             </div>
             <div 
               className={`filter-option ${distanceFilter === '10+ km' ? 'active' : ''}`}
               onClick={() => handleFilterChange('distance', '10+ km')}
             >
-              10+ km
+              {t('localAttractions.filters.farther')}
             </div>
           </div>
         </div>
         
         <div className="filter-group">
-          <label>Category</label>
+          <label>{t('localAttractions.filters.category')}</label>
           <div className="filter-options">
             <div 
               className={`filter-option ${categoryFilter === 'all' ? 'active' : ''}`}
               onClick={() => handleFilterChange('category', 'all')}
             >
-              All
+              {t('localAttractions.filters.all')}
             </div>
             <div 
               className={`filter-option ${categoryFilter === 'museums' ? 'active' : ''}`}
               onClick={() => handleFilterChange('category', 'museums')}
             >
-              Museums
+              {t('localAttractions.filters.museums')}
             </div>
             <div 
               className={`filter-option ${categoryFilter === 'parks' ? 'active' : ''}`}
               onClick={() => handleFilterChange('category', 'parks')}
             >
-              Parks
+              {t('localAttractions.filters.parks')}
             </div>
             <div 
               className={`filter-option ${categoryFilter === 'shopping' ? 'active' : ''}`}
               onClick={() => handleFilterChange('category', 'shopping')}
             >
-              Shopping
+              {t('localAttractions.filters.shopping')}
             </div>
             <div 
               className={`filter-option ${categoryFilter === 'dining' ? 'active' : ''}`}
               onClick={() => handleFilterChange('category', 'dining')}
             >
-              Dining
+              {t('localAttractions.filters.dining')}
             </div>
           </div>
         </div>
@@ -231,7 +237,7 @@ const LocalAttractions: React.FC = () => {
                       <span key={i}>{i < attraction.rating ? '★' : '☆'}</span>
                     ))}
                   </div>
-                  <div className="rating-count">{attraction.reviewCount} reviews</div>
+                  <div className="rating-count">{attraction.reviewCount} {t('localAttractions.reviews')}</div>
                 </div>
               </div>
               <p className="attraction-description">{attraction.description}</p>
@@ -252,7 +258,7 @@ const LocalAttractions: React.FC = () => {
       </div>
       
       <div className="transportation-section">
-        <h2 className="heading-secondary">Transportation Options</h2>
+        <h2 className="heading-secondary">{t('localAttractions.transportation')}</h2>
         <div className="transportation-options">
           {transportOptions.map(option => (
             <div className="transport-card" key={option.id}>
@@ -268,7 +274,7 @@ const LocalAttractions: React.FC = () => {
       </div>
       
       <Button variant="text" onClick={() => navigate('/home')}>
-        ← Back to Home
+        ← {t('common.backHome')}
       </Button>
       
       <Footer />

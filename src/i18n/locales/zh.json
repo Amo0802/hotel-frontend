@@ -1,0 +1,441 @@
+{
+  "common": {
+    "welcome": "欢迎光临我们的酒店",
+    "back": "返回",
+    "save": "保存",
+    "cancel": "取消",
+    "submit": "提交",
+    "loading": "加载中...",
+    "error": "发生错误",
+    "selectLanguage": "选择语言",
+    "yes": "是",
+    "no": "否",
+    "close": "关闭",
+    "continue": "继续",
+    "backHome": "返回首页"
+  },
+  "language": {
+    "title": "选择您的语言",
+    "continue": "继续"
+  },
+  "login": {
+    "title": "欢迎",
+    "prompt": "请输入您的预订码以继续",
+    "reservationCode": "输入您的代码",
+    "forgotCode": "在哪里可以找到我的代码？",
+    "login": "登录",
+    "firstTime": "第一次来？",
+    "codeHelp": "您的预订码已发送到您的预订确认邮件中。如果您今天办理入住，您也可以在前台获取您的代码。"
+  },
+  "checkIn": {
+    "title": "入住登记",
+    "completeCheckIn": "完成您的入住登记",
+    "confirmDetails": "请确认以下详细信息以完成入住登记流程。",
+    "steps": {
+      "reservation": "预订",
+      "checkIn": "入住",
+      "roomReady": "房间已准备"
+    },
+    "fullName": "全名",
+    "email": "电子邮件",
+    "phone": "电话号码",
+    "phonePrompt": "输入您的电话号码",
+    "idType": "证件类型",
+    "selectIdType": "选择证件类型",
+    "passport": "护照",
+    "driversLicense": "驾驶执照",
+    "nationalId": "身份证",
+    "idNumber": "证件号码",
+    "idNumberPrompt": "输入您的证件号码",
+    "arrival": "预计到达时间",
+    "arrivalOptions": {
+      "now": "我现在到达",
+      "oneHour": "1小时内",
+      "twoHours": "2小时内",
+      "today": "今天晚些时候",
+      "tomorrow": "明天"
+    },
+    "specialRequests": "特殊要求",
+    "specialRequestsPrompt": "您的住宿有任何特殊要求吗？",
+    "completeButton": "完成入住"
+  },
+  "home": {
+    "foodDining": "餐饮服务",
+    "foodDiningDesc": "客房服务、餐厅和预订",
+    "amenities": "设施",
+    "amenitiesDesc": "水疗、泳池、健身房和其他设施",
+    "hotelMap": "酒店地图",
+    "hotelMapDesc": "在我们的物业内导航",
+    "localAttractions": "当地景点",
+    "localAttractionsDesc": "发现地点和交通",
+    "cleanRoom": "房间清洁",
+    "cleanRoomDesc": "请求客房清洁服务",
+    "maintenance": "维修",
+    "maintenanceDesc": "报告您房间内的问题",
+    "dnd": "请勿打扰",
+    "dndDesc": "为您的房间切换隐私模式",
+    "lostFound": "失物招领",
+    "lostFoundDesc": "报告或认领失物",
+    "feedback": "反馈和评论",
+    "feedbackDesc": "分享您的体验",
+    "askQuestion": "提问",
+    "askQuestionDesc": "获取任何帮助",
+    "checkOut": "退房",
+    "checkOutDesc": "完成您的退房流程"
+  },
+  "foodDining": {
+    "title": "餐饮服务",
+    "howEnjoyMeal": "您想如何享用您的餐点？",
+    "currentOrders": "您当前的订单",
+    "roomService": "客房服务",
+    "roomServiceDesc": "在您房间的舒适环境中享用美味餐点",
+    "selectRoomService": "选择客房服务",
+    "restaurant": "餐厅",
+    "restaurantDesc": "在我们的餐厅内用餐",
+    "selectRestaurant": "选择餐厅",
+    "diningReservations": "餐饮预订",
+    "diningReservationsDesc": "预订早餐、午餐或晚餐",
+    "makeReservation": "进行预订"
+  },
+  "amenities": {
+    "title": "酒店设施",
+    "explore": "探索我们的设施和服务",
+    "spa": "水疗和健康",
+    "spaDesc": "享受放松的治疗和按摩",
+    "pool": "游泳池",
+    "poolDesc": "享受我们的室内和室外恒温泳池",
+    "gym": "健身中心",
+    "gymDesc": "最先进的设备和私人教练",
+    "business": "商务中心",
+    "businessDesc": "会议室和商务服务",
+    "hours": "营业时间",
+    "location": "位置",
+    "bookSession": "预约课程",
+    "reserveTime": "预订时段",
+    "bookTrainer": "预约教练",
+    "bookRoom": "预订房间"
+  },
+  "hotelMap": {
+    "title": "酒店地图",
+    "findYourWay": "在我们的物业内找到您的路",
+    "selectFloor": "选择楼层：",
+    "floors": {
+      "lobby": "大堂",
+      "level1": "1层",
+      "level2": "2层",
+      "level3": "3层",
+      "level4": "4层",
+      "level5": "5层"
+    },
+    "searchLocation": "搜索位置",
+    "legend": "图例",
+    "locations": {
+      "pool": "泳池",
+      "restaurant": "餐厅",
+      "restrooms": "洗手间",
+      "yourRoom": "您的房间",
+      "exit": "出口",
+      "elevator": "电梯"
+    }
+  },
+  "localAttractions": {
+    "title": "当地景点",
+    "discover": "发现我们地区的最佳景点",
+    "filters": {
+      "distance": "距离",
+      "all": "全部",
+      "nearby": "附近",
+      "midRange": "5-10公里",
+      "farther": "10公里以上",
+      "category": "类别",
+      "museums": "博物馆",
+      "parks": "公园",
+      "shopping": "购物",
+      "dining": "餐饮"
+    },
+    "getDirections": "获取路线",
+    "distance": "距离",
+    "reviews": "评论",
+    "transportation": "交通选择",
+    "taxi": "出租车服务",
+    "taxiDesc": "直接从酒店预订出租车",
+    "carRental": "租车",
+    "carRentalDesc": "为您的住宿租车",
+    "publicTransit": "公共交通",
+    "publicTransitDesc": "关于公共汽车和火车的信息",
+    "walkingTours": "步行游览",
+    "walkingToursDesc": "导游和自助游览选项",
+    "bookNow": "立即预订",
+    "viewOptions": "查看选项",
+    "viewRoutes": "查看路线",
+    "bookTour": "预订游览"
+  },
+  "cleanRoom": {
+    "title": "客房清洁服务",
+    "currentRequest": "当前请求",
+    "requestHousekeeping": "请求客房清洁",
+    "availableHours": "我们的客房清洁团队每天早上8:00至晚上8:00提供服务。",
+    "serviceType": "服务类型",
+    "selectServiceType": "选择服务类型",
+    "services": {
+      "full": "全面清洁",
+      "light": "轻度清洁",
+      "turndown": "整理床铺服务",
+      "towels": "仅更换毛巾",
+      "supplies": "补充用品"
+    },
+    "preferredTime": "首选时间",
+    "selectTime": "选择时间",
+    "timeOptions": {
+      "asap": "尽快",
+      "morning": "上午 (8AM - 12PM)",
+      "afternoon": "下午 (12PM - 4PM)",
+      "evening": "晚上 (4PM - 8PM)"
+    },
+    "specialInstructions": "特别说明",
+    "specialInstructionsPrompt": "有任何特殊要求或说明吗？",
+    "notPresent": "清洁期间我不会在场",
+    "submitRequest": "提交请求",
+    "regularSchedule": "定期清洁计划",
+    "scheduledDays": "您的房间安排在以下日期进行定期清洁：",
+    "daysOfWeek": {
+      "mon": "周一",
+      "tue": "周二",
+      "wed": "周三",
+      "thu": "周四",
+      "fri": "周五",
+      "sat": "周六",
+      "sun": "周日"
+    },
+    "adjustSchedule": "我想调整我的定期清洁计划"
+  },
+  "maintenance": {
+    "title": "维修请求",
+    "reportIssues": "报告您房间内的任何问题",
+    "openRequests": "待处理请求",
+    "reportIssue": "报告问题",
+    "issueCategory": "问题类别",
+    "selectCategory": "选择类别",
+    "categories": {
+      "ac": "空调/暖气",
+      "electrical": "电气",
+      "plumbing": "水管",
+      "tv": "电视/娱乐",
+      "internet": "互联网/WiFi",
+      "furniture": "家具/固定装置",
+      "other": "其他"
+    },
+    "issueDescription": "问题描述",
+    "descriptionPrompt": "请详细描述问题",
+    "priority": "优先级",
+    "priorityLevels": {
+      "low": "低 - 不紧急",
+      "medium": "中 - 需要关注",
+      "high": "高 - 紧急问题"
+    },
+    "addPhotos": "添加照片",
+    "takePhoto": "拍照",
+    "uploadPhoto": "上传照片",
+    "authEntry": "我授权在我不在场时进入我的房间",
+    "contactMethod": "首选联系方式",
+    "contactOptions": {
+      "app": "应用通知",
+      "phone": "电话",
+      "sms": "短信",
+      "email": "电子邮件"
+    }
+  },
+  "lostFound": {
+    "title": "失物招领",
+    "reportLost": "报告丢失物品",
+    "browseFound": "浏览已找到物品",
+    "myReports": "我的报告",
+    "itemNameType": "物品名称/类型",
+    "itemNamePrompt": "例如：黑色钱包、太阳镜",
+    "description": "描述",
+    "descriptionPrompt": "请详细描述物品（颜色、品牌、显著特征）",
+    "category": "类别",
+    "selectCategory": "选择类别",
+    "categories": {
+      "electronics": "电子设备",
+      "wallet": "钱包/手提包",
+      "clothing": "衣物",
+      "jewelry": "珠宝",
+      "keys": "钥匙",
+      "documents": "文件",
+      "other": "其他"
+    },
+    "lastLocation": "最后见到位置",
+    "selectLocation": "选择位置",
+    "locations": {
+      "room": "我的房间",
+      "restaurant": "餐厅",
+      "lobby": "大堂",
+      "pool": "泳池区",
+      "spa": "水疗中心",
+      "gym": "健身中心",
+      "other": "其他"
+    },
+    "lastSeenTime": "最后见到日期/时间",
+    "addPhoto": "添加物品照片（如有）",
+    "uploadPhoto": "上传照片",
+    "contactNumber": "联系电话",
+    "contactNumberPrompt": "您的电话号码",
+    "submitReport": "提交报告",
+    "recentlyFound": "最近找到的物品",
+    "claimInstructions": "这些物品已交至我们的失物招领部门。如果您看到您的物品，请认领。",
+    "filterBy": "筛选条件：",
+    "searchItems": "搜索物品...",
+    "found": "已找到",
+    "claimItem": "认领此物品",
+    "yourReports": "您的报告",
+    "noReports": "您尚未报告任何丢失物品。",
+    "reportStatus": {
+      "pending": "待处理",
+      "found": "已找到",
+      "closed": "已关闭"
+    },
+    "viewDetails": "查看详情",
+    "update": "更新"
+  },
+  "feedback": {
+    "title": "反馈和评论",
+    "valueOpinion": "我们重视您的意见",
+    "shareExperience": "分享您的体验",
+    "helpImprove": "您的反馈有助于我们改进。请评价您的住宿并分享您的想法。",
+    "overallExperience": "整体体验",
+    "categories": {
+      "room": "房间质量",
+      "service": "服务",
+      "cleanliness": "清洁度",
+      "food": "餐饮",
+      "value": "性价比"
+    },
+    "reviewTitle": "评论标题",
+    "reviewTitlePrompt": "概括您的体验",
+    "yourReview": "您的评论",
+    "reviewPrompt": "告诉我们更多关于您的住宿",
+    "likes": "您最喜欢什么？",
+    "improvements": "有什么可以改进的地方？",
+    "addPhotos": "添加照片（可选）",
+    "uploadPhotos": "上传照片",
+    "anonymous": "匿名提交",
+    "submitReview": "提交评论",
+    "quickFeedback": "快速反馈",
+    "quickFeedbackPrompt": "有特定的评论或建议？请告诉我们。",
+    "feedbackTypes": {
+      "compliment": "表扬",
+      "suggestion": "建议",
+      "issue": "问题"
+    },
+    "sendFeedback": "发送反馈",
+    "likeTags": {
+      "location": "位置",
+      "staff": "员工",
+      "comfort": "舒适度",
+      "amenities": "设施",
+      "food": "食物",
+      "roomSize": "房间大小",
+      "cleanliness": "清洁度",
+      "value": "价值"
+    },
+    "improvementTags": {
+      "noise": "噪音",
+      "bathroom": "浴室",
+      "wifi": "WiFi",
+      "ac": "空调",
+      "foodQuality": "食物质量",
+      "checkIn": "入住流程",
+      "roomService": "客房服务",
+      "pricing": "价格"
+    }
+  },
+  "chatbot": {
+    "title": "提问",
+    "aiAssistant": "我们的AI助手随时为您服务",
+    "greeting": "您好！我是您的酒店助手。今天我能帮您什么？",
+    "inputPlaceholder": "在此处输入您的问题...",
+    "quickQuestions": {
+      "breakfast": "早餐几点开始？",
+      "airport": "如何前往机场？",
+      "fitness": "健身中心在哪里？",
+      "wifi": "WiFi密码是什么？"
+    }
+  },
+  "checkOut": {
+    "title": "退房",
+    "steps": {
+      "review": "审查",
+      "payment": "付款",
+      "confirm": "确认"
+    },
+    "staySummary": "住宿摘要",
+    "stayDetails": {
+      "guest": "客人",
+      "room": "房间",
+      "checkIn": "入住",
+      "checkOut": "退房",
+      "lateCheckOut": "延迟退房"
+    },
+    "checkOutOptions": {
+      "standard": "标准 (上午11:00)",
+      "1pm": "下午1:00 (+$20)",
+      "3pm": "下午3:00 (+$40)",
+      "6pm": "晚上6:00 (+$60)"
+    },
+    "bill": {
+      "title": "您的账单",
+      "description": "描述",
+      "date": "日期",
+      "amount": "金额",
+      "subtotal": "小计",
+      "tax": "税费",
+      "total": "总计",
+      "depositPaid": "已付押金",
+      "balanceDue": "应付余额",
+      "viewDetailed": "查看详细账单",
+      "emailReceipt": "邮件收据"
+    },
+    "paymentMethod": {
+      "title": "支付方式",
+      "cardOnFile": "记录在案的卡",
+      "newCard": "新卡",
+      "payFrontDesk": "前台付款",
+      "cardNumber": "卡号",
+      "expiryDate": "到期日期",
+      "cvc": "CVC",
+      "cardholderName": "持卡人姓名"
+    },
+    "feedback": {
+      "howWasStay": "您在我们这里的住宿如何？",
+      "ratings": {
+        "poor": "差",
+        "average": "一般",
+        "good": "好",
+        "excellent": "极好"
+      },
+      "detailedFeedback": "留下详细反馈"
+    },
+    "actions": {
+      "notNow": "暂不",
+      "completeCheckOut": "完成退房"
+    }
+  },
+  "roomService": {
+    "title": "客房服务菜单",
+    "yourOrder": "您的订单",
+    "emptyOrder": "您的订单是空的。从菜单中添加项目。",
+    "total": "总计：",
+    "placeOrder": "下单"
+  },
+  "notifications": {
+    "cleaningProgress": "房间清洁进行中",
+    "dndEnabled": "请勿打扰已启用",
+    "disable": "禁用",
+    "inProgress": "进行中",
+    "eta": "预计到达时间",
+    "cancel": "取消",
+    "update": "更新",
+    "minutes": "分钟"
+  }
+}

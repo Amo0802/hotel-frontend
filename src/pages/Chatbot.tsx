@@ -1,10 +1,13 @@
+// src/pages/Chatbot.tsx
 import React, { useState, useRef, useEffect, FormEvent, KeyboardEvent } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { useAuth } from '../context/AuthContext';
 import { useAppState } from '../context/AppStateContext';
 import LogoPlaceholder from '../components/common/LogoPlaceholder';
 import Footer from '../components/common/Footer';
 import Button from '../components/common/Button';
+import FloatingLanguageSelector from '../components/common/FloatingLanguageSelector';
 import '../styles/pages/Chatbot.css';
 
 interface Message {
@@ -20,6 +23,7 @@ interface QuickQuestion {
 }
 
 const Chatbot: React.FC = () => {
+  const { t } = useTranslation();
   const navigate = useNavigate();
   const { user } = useAuth();
   const { currentLanguage } = useAppState();
@@ -27,7 +31,7 @@ const Chatbot: React.FC = () => {
   
   const [messages, setMessages] = useState<Message[]>([{
     id: '1',
-    text: 'Hello! I\'m your hotel assistant. How can I help you today?',
+    text: t('chatbot.greeting'),
     sender: 'bot',
     timestamp: new Date()
   }]);
@@ -35,10 +39,10 @@ const Chatbot: React.FC = () => {
   const [loading, setLoading] = useState<boolean>(false);
 
   const quickQuestions: QuickQuestion[] = [
-    { id: 'breakfast', text: 'What time is breakfast?' },
-    { id: 'airport', text: 'How do I get to the airport?' },
-    { id: 'fitness', text: 'Where is the fitness center?' },
-    { id: 'wifi', text: 'What\'s the WiFi password?' }
+    { id: 'breakfast', text: t('chatbot.quickQuestions.breakfast') },
+    { id: 'airport', text: t('chatbot.quickQuestions.airport') },
+    { id: 'fitness', text: t('chatbot.quickQuestions.fitness') },
+    { id: 'wifi', text: t('chatbot.quickQuestions.wifi') }
   ];
 
   // Scroll to bottom of messages
@@ -96,10 +100,12 @@ const Chatbot: React.FC = () => {
 
   return (
     <div className="container">
+      <FloatingLanguageSelector />
+      
       <div className="logo-area">
         <LogoPlaceholder />
-        <h1 className="heading-primary">Ask a Question</h1>
-        <p className="help-text text-center">Our AI assistant is here to help</p>
+        <h1 className="heading-primary">{t('chatbot.title')}</h1>
+        <p className="help-text text-center">{t('chatbot.aiAssistant')}</p>
       </div>
       
       <div className="card chat-container">
@@ -120,7 +126,7 @@ const Chatbot: React.FC = () => {
             type="text" 
             className="chat-input" 
             id="user-message" 
-            placeholder="Type your question here..."
+            placeholder={t('chatbot.inputPlaceholder')}
             value={currentMessage}
             onChange={(e) => setCurrentMessage(e.target.value)}
             onKeyPress={handleKeyPress}
@@ -152,7 +158,7 @@ const Chatbot: React.FC = () => {
       </div>
       
       <Button variant="text" onClick={() => navigate('/home')}>
-        ← Back to Home
+        ← {t('common.backHome')}
       </Button>
       
       <Footer />

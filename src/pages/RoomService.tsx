@@ -1,10 +1,13 @@
+// src/pages/RoomService.tsx
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { getRoomServiceMenu, placeRoomServiceOrder } from '../api/roomServiceApi';
 import LogoPlaceholder from '../components/common/LogoPlaceholder';
 import Button from '../components/common/Button';
 import Card from '../components/common/Card';
 import Footer from '../components/common/Footer';
+import FloatingLanguageSelector from '../components/common/FloatingLanguageSelector';
 import { Menu, MenuItem } from '../types';
 import '../styles/pages/RoomService.css';
 
@@ -13,6 +16,7 @@ interface OrderItem extends MenuItem {
 }
 
 const RoomService: React.FC = () => {
+  const { t } = useTranslation();
   const navigate = useNavigate();
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
@@ -32,7 +36,7 @@ const RoomService: React.FC = () => {
           setActiveTab(Object.keys(menuData)[0]);
         }
       } catch (err) {
-        const errorMessage = err instanceof Error ? err.message : 'Failed to load menu';
+        const errorMessage = err instanceof Error ? err.message : t('common.error');
         setError(errorMessage);
         console.error(err);
       } finally {
@@ -41,7 +45,7 @@ const RoomService: React.FC = () => {
     };
 
     fetchMenu();
-  }, []);
+  }, [t]);
 
   // Calculate total whenever order changes
   useEffect(() => {
@@ -63,7 +67,7 @@ const RoomService: React.FC = () => {
 
   const handlePlaceOrder = async (): Promise<void> => {
     if (order.length === 0) {
-      alert('Please add items to your order.');
+      alert(t('roomService.emptyOrder'));
       return;
     }
 
@@ -83,13 +87,13 @@ const RoomService: React.FC = () => {
       const response = await placeRoomServiceOrder(orderData);
       
       if (response.success) {
-        alert('Your order has been placed!');
+        alert(t('roomService.placeOrder'));
         navigate('/food-dining');
       } else {
-        throw new Error(response.message || 'Failed to place order');
+        throw new Error(response.message || t('common.error'));
       }
     } catch (err) {
-      const errorMessage = err instanceof Error ? err.message : 'Failed to place order';
+      const errorMessage = err instanceof Error ? err.message : t('common.error');
       setError(errorMessage);
     } finally {
       setLoading(false);
@@ -107,7 +111,7 @@ const RoomService: React.FC = () => {
           <LogoPlaceholder />
         </div>
         <Card>
-          <div className="loading">Loading menu...</div>
+          <div className="loading">{t('common.loading')}</div>
         </Card>
       </div>
     );
@@ -115,9 +119,11 @@ const RoomService: React.FC = () => {
 
   return (
     <div className="container">
+      <FloatingLanguageSelector />
+      
       <div className="logo-area">
         <LogoPlaceholder />
-        <h1 className="heading-primary">Room Service Menu</h1>
+        <h1 className="heading-primary">{t('roomService.title')}</h1>
       </div>
       
       {error && <div className="error-message card">{error}</div>}
@@ -164,10 +170,10 @@ const RoomService: React.FC = () => {
       </div>
       
       <div className="order-summary">
-        <h2 className="heading-secondary">Your Order</h2>
+        <h2 className="heading-secondary">{t('roomService.yourOrder')}</h2>
         <div className="order-items">
           {order.length === 0 ? (
-            <p className="empty-order-message">Your order is empty. Add items from the menu.</p>
+            <p className="empty-order-message">{t('roomService.emptyOrder')}</p>
           ) : (
             order.map(item => (
               <div key={item.id} className="order-item">
@@ -185,7 +191,7 @@ const RoomService: React.FC = () => {
         </div>
         
         <div className="order-total">
-          <div className="total-label">Total:</div>
+          <div className="total-label">{t('roomService.total')}</div>
           <div className="total-amount">${orderTotal.toFixed(2)}</div>
         </div>
         
@@ -194,12 +200,12 @@ const RoomService: React.FC = () => {
           loading={loading}
           disabled={order.length === 0}
         >
-          Place Order
+          {t('roomService.placeOrder')}
         </Button>
       </div>
       
       <Button variant="text" onClick={handleBackClick}>
-        ← Back to Food Options
+        ← {t('common.backHome')}
       </Button>
       
       <Footer />

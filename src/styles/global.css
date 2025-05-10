@@ -239,3 +239,17 @@ body {
     padding: var(--spacing-xl);
   }
 }
+
+.language-selector-wrapper {
+  position: absolute;
+  top: var(--spacing-md);
+  right: var(--spacing-md);
+  z-index: 100;
+}
+
+@media (min-width: 768px) {
+  .language-selector-wrapper {
+    top: var(--spacing-lg);
+    right: var(--spacing-lg);
+  }
+}

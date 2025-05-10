@@ -1,6 +1,6 @@
-// Component for the home screen
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { useAuth } from '../context/AuthContext';
 import { useAppState } from '../context/AppStateContext';
 import { toggleDnd as toggleDndApi } from '../api/cleanMaintenanceServiceApi';
@@ -8,9 +8,11 @@ import LogoPlaceholder from '../components/common/LogoPlaceholder';
 import StatusNotification from '../components/home/StatusNotification';
 import OptionCard from '../components/home/OptionCard';
 import Footer from '../components/common/Footer';
+import FloatingLanguageSelector from '../components/common/FloatingLanguageSelector';
 import '../styles/pages/Home.css';
 
 const Home: React.FC = () => {
+  const { t } = useTranslation();
   const { user } = useAuth();
   const { dndActive, toggleDnd, activeRequests } = useAppState();
   const navigate = useNavigate();
@@ -42,9 +44,12 @@ const Home: React.FC = () => {
 
   return (
     <div className="container">
+      {/* Add the floating language selector */}
+      <FloatingLanguageSelector />
+      
       <div className="logo-area">
         <LogoPlaceholder />
-        <h1 className="heading-primary">Welcome to Our Hotel</h1>
+        <h1 className="heading-primary">{t('common.welcome')}</h1>
       </div>
       
       {/* Status Notifications */}
@@ -83,88 +88,88 @@ const Home: React.FC = () => {
         <OptionCard
           id="food-dining"
           icon="🍽️"
-          title="Food & Dining"
-          description="Room service, restaurant, & reservations"
+          title={t('home.foodDining')}
+          description={t('home.foodDiningDesc')}
           onClick={() => handleOptionOrAction('food-dining')}
         />
         
         <OptionCard
           id="amenities"
           icon="🏊"
-          title="Amenities"
-          description="Spa, pool, gym & other facilities"
+          title={t('home.amenities')}
+          description={t('home.amenitiesDesc')}
           onClick={() => handleOptionOrAction('amenities')}
         />
         
         <OptionCard
           id="hotel-map"
           icon="🗺️"
-          title="Hotel Map"
-          description="Navigate around our property"
+          title={t('home.hotelMap')}
+          description={t('home.hotelMapDesc')}
           onClick={() => handleOptionOrAction('hotel-map')}
         />
         
         <OptionCard
           id="local-attractions"
           icon="🏛️"
-          title="Local Attractions"
-          description="Discover places & transportation"
+          title={t('home.localAttractions')}
+          description={t('home.localAttractionsDesc')}
           onClick={() => handleOptionOrAction('local-attractions')}
         />
         
         <OptionCard
           id="clean-room"
           icon="🧹"
-          title="Clean Room"
-          description="Request housekeeping service"
+          title={t('home.cleanRoom')}
+          description={t('home.cleanRoomDesc')}
           onClick={() => handleOptionOrAction('clean-room')}
         />
         
         <OptionCard
           id="maintenance"
           icon="🔧"
-          title="Maintenance"
-          description="Report issues in your room"
+          title={t('home.maintenance')}
+          description={t('home.maintenanceDesc')}
           onClick={() => handleOptionOrAction('maintenance')}
         />
 
         <OptionCard
           id="dnd-toggle"
           icon={dndActive ? "🔔" : "🔕"}
-          title="Do Not Disturb"
-          description="Toggle privacy mode for your room"
+          title={t('home.dnd')}
+          description={t('home.dndDesc')}
           onClick={() => handleOptionOrAction('dnd-toggle')}
         />
         
         <OptionCard
           id="lost-found"
           icon="🔍"
-          title="Lost & Found"
-          description="Report or claim lost items"
+          title={t('home.lostFound')}
+          description={t('home.lostFoundDesc')}
           onClick={() => handleOptionOrAction('lost-found')}
         />
         
         <OptionCard
           id="feedback"
           icon="⭐"
-          title="Feedback & Reviews"
-          description="Share your experience"
+          title={t('home.feedback')}
+          description={t('home.feedbackDesc')}
           onClick={() => handleOptionOrAction('feedback')}
         />
         
         <OptionCard
           id="ask-question"
           icon="❓"
-          title="Ask a Question"
-          description="Get help with anything"
+          title={t('home.askQuestion')}
+          description={t('home.askQuestionDesc')}
           onClick={() => handleOptionOrAction('chatbot')}
         />
         
         <OptionCard
           id="check-out"
           icon="CO"
-          title="Check Out"
-          description="Complete your check-out process"
+          title={t('home.checkOut')}
+          description={t('home.checkOutDesc')}
           onClick={() => handleOptionOrAction('check-out')}
         />
       </div>

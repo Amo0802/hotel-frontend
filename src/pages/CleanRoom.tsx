@@ -1,11 +1,14 @@
+// src/pages/CleanRoom.tsx
 import React, { useState, FormEvent, ChangeEvent } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { useAppState } from '../context/AppStateContext';
 import { requestCleaning, getCleaningSchedule } from '../api/cleanMaintenanceServiceApi';
 import LogoPlaceholder from '../components/common/LogoPlaceholder';
 import Card from '../components/common/Card';
 import Button from '../components/common/Button';
 import Footer from '../components/common/Footer';
+import FloatingLanguageSelector from '../components/common/FloatingLanguageSelector';
 import '../styles/pages/CleanRoom.css';
 
 interface CleaningFormData {
@@ -16,6 +19,7 @@ interface CleaningFormData {
 }
 
 const CleanRoom: React.FC = () => {
+  const { t } = useTranslation();
   const navigate = useNavigate();
   const { activeRequests, addActiveRequest } = useAppState();
   const [loading, setLoading] = useState<boolean>(false);
@@ -63,13 +67,13 @@ const CleanRoom: React.FC = () => {
           eta: response.data.eta
         });
         
-        alert('Your cleaning request has been submitted.');
+        alert(t('cleanRoom.submitRequest'));
         navigate('/home');
       } else {
-        setError(response.message || 'Failed to submit cleaning request.');
+        setError(response.message || t('common.error'));
       }
     } catch (err) {
-      const errorMessage = err instanceof Error ? err.message : 'An error occurred';
+      const errorMessage = err instanceof Error ? err.message : t('common.error');
       setError(errorMessage);
     } finally {
       setLoading(false);
@@ -78,42 +82,44 @@ const CleanRoom: React.FC = () => {
 
   return (
     <div className="container">
+      <FloatingLanguageSelector />
+      
       <div className="logo-area">
         <LogoPlaceholder />
-        <h1 className="heading-primary">Housekeeping Services</h1>
+        <h1 className="heading-primary">{t('cleanRoom.title')}</h1>
       </div>
       
       {/* Status indicator for cleaning requests */}
       {activeRequests.cleaning && (
         <div className="status-indicator-box" id="cleaning-status">
-          <div className="status-indicator-title">Current Request</div>
+          <div className="status-indicator-title">{t('cleanRoom.currentRequest')}</div>
           <div className="status-item">
             <div className="status-icon cleaning">🧹</div>
             <div className="status-details">
-              <h4>Room Cleaning</h4>
-              <p>Requested at {activeRequests.cleaning.requested}</p>
+              <h4>{t('notifications.cleaningProgress')}</h4>
+              <p>{t('notifications.requested')} {activeRequests.cleaning.requested}</p>
               <div className="status-progress">
                 <div className="status-bar" style={{ width: '75%' }}></div>
               </div>
-              <p className="status-label">In progress - ETA: 20 minutes</p>
+              <p className="status-label">{t('notifications.inProgress')} - {t('notifications.eta')}: 20 {t('notifications.minutes')}</p>
             </div>
             <button 
               className="btn btn-text btn-cancel"
-              onClick={() => alert('Cancel request?')}
+              onClick={() => alert(t('notifications.cancel'))}
             >
-              Cancel
+              {t('notifications.cancel')}
             </button>
           </div>
         </div>
       )}
       
       <Card>
-        <h2 className="heading-secondary">Request Housekeeping</h2>
-        <p className="help-text">Our housekeeping team is available from 8:00 AM to 8:00 PM daily.</p>
+        <h2 className="heading-secondary">{t('cleanRoom.requestHousekeeping')}</h2>
+        <p className="help-text">{t('cleanRoom.availableHours')}</p>
         
         <form id="cleaning-form" onSubmit={handleSubmit}>
           <div className="form-group">
-            <label className="form-label" htmlFor="cleaningType">Service Type</label>
+            <label className="form-label" htmlFor="cleaningType">{t('cleanRoom.serviceType')}</label>
             <select 
               className="form-input" 
               id="cleaningType" 
@@ -121,17 +127,17 @@ const CleanRoom: React.FC = () => {
               onChange={handleInputChange}
               required
             >
-              <option value="" disabled>Select Service Type</option>
-              <option value="full">Full Cleaning</option>
-              <option value="light">Light Cleaning</option>
-              <option value="turndown">Turndown Service</option>
-              <option value="towels">Fresh Towels Only</option>
-              <option value="supplies">Restock Supplies</option>
+              <option value="" disabled>{t('cleanRoom.selectServiceType')}</option>
+              <option value="full">{t('cleanRoom.services.full')}</option>
+              <option value="light">{t('cleanRoom.services.light')}</option>
+              <option value="turndown">{t('cleanRoom.services.turndown')}</option>
+              <option value="towels">{t('cleanRoom.services.towels')}</option>
+              <option value="supplies">{t('cleanRoom.services.supplies')}</option>
             </select>
           </div>
           
           <div className="form-group">
-            <label className="form-label" htmlFor="cleaningTime">Preferred Time</label>
+            <label className="form-label" htmlFor="cleaningTime">{t('cleanRoom.preferredTime')}</label>
             <select 
               className="form-input" 
               id="cleaningTime" 
@@ -139,20 +145,20 @@ const CleanRoom: React.FC = () => {
               onChange={handleInputChange}
               required
             >
-              <option value="" disabled>Select Time</option>
-              <option value="asap">As Soon As Possible</option>
-              <option value="morning">Morning (8AM - 12PM)</option>
-              <option value="afternoon">Afternoon (12PM - 4PM)</option>
-              <option value="evening">Evening (4PM - 8PM)</option>
+              <option value="" disabled>{t('cleanRoom.selectTime')}</option>
+              <option value="asap">{t('cleanRoom.timeOptions.asap')}</option>
+              <option value="morning">{t('cleanRoom.timeOptions.morning')}</option>
+              <option value="afternoon">{t('cleanRoom.timeOptions.afternoon')}</option>
+              <option value="evening">{t('cleanRoom.timeOptions.evening')}</option>
             </select>
           </div>
           
           <div className="form-group">
-            <label className="form-label" htmlFor="cleaningNotes">Special Instructions</label>
+            <label className="form-label" htmlFor="cleaningNotes">{t('cleanRoom.specialInstructions')}</label>
             <textarea 
               className="form-input" 
               id="cleaningNotes" 
-              placeholder="Any special requests or instructions?" 
+              placeholder={t('cleanRoom.specialInstructionsPrompt')} 
               rows={3}
               value={formData.cleaningNotes}
               onChange={handleInputChange}
@@ -168,41 +174,41 @@ const CleanRoom: React.FC = () => {
               onChange={handleCheckboxChange}
             />
             <label htmlFor="notPresent" className="checkbox-label">
-              I will not be present during cleaning
+              {t('cleanRoom.notPresent')}
             </label>
           </div>
           
           {error && <div className="error-message">{error}</div>}
           
-          <Button type="submit" loading={loading}>Submit Request</Button>
+          <Button type="submit" loading={loading}>{t('cleanRoom.submitRequest')}</Button>
         </form>
       </Card>
       
       <Card>
-        <h2 className="heading-secondary">Regular Cleaning Schedule</h2>
-        <p className="help-text">Your room is scheduled for regular cleaning on the following days:</p>
+        <h2 className="heading-secondary">{t('cleanRoom.regularSchedule')}</h2>
+        <p className="help-text">{t('cleanRoom.scheduledDays')}</p>
         
         <div className="schedule-days">
           <div className="schedule-day active">
-            <div className="day-label">Mon</div>
+            <div className="day-label">{t('cleanRoom.daysOfWeek.mon')}</div>
           </div>
           <div className="schedule-day">
-            <div className="day-label">Tue</div>
+            <div className="day-label">{t('cleanRoom.daysOfWeek.tue')}</div>
           </div>
           <div className="schedule-day active">
-            <div className="day-label">Wed</div>
+            <div className="day-label">{t('cleanRoom.daysOfWeek.wed')}</div>
           </div>
           <div className="schedule-day">
-            <div className="day-label">Thu</div>
+            <div className="day-label">{t('cleanRoom.daysOfWeek.thu')}</div>
           </div>
           <div className="schedule-day active">
-            <div className="day-label">Fri</div>
+            <div className="day-label">{t('cleanRoom.daysOfWeek.fri')}</div>
           </div>
           <div className="schedule-day">
-            <div className="day-label">Sat</div>
+            <div className="day-label">{t('cleanRoom.daysOfWeek.sat')}</div>
           </div>
           <div className="schedule-day">
-            <div className="day-label">Sun</div>
+            <div className="day-label">{t('cleanRoom.daysOfWeek.sun')}</div>
           </div>
         </div>
         
@@ -215,20 +221,20 @@ const CleanRoom: React.FC = () => {
             onChange={(e) => setShowScheduleAdjustment(e.target.checked)}
           />
           <label htmlFor="adjust-schedule" className="checkbox-label">
-            I'd like to adjust my regular cleaning schedule
+            {t('cleanRoom.adjustSchedule')}
           </label>
         </div>
         
         {showScheduleAdjustment && (
           <div className="schedule-adjustment">
-            <p className="help-text">Select which days you'd like your room to be cleaned:</p>
+            <p className="help-text">{t('cleanRoom.scheduledDays')}</p>
             {/* Day selection UI would go here */}
           </div>
         )}
       </Card>
       
       <Button variant="text" onClick={() => navigate('/home')}>
-        ← Back to Home
+        ← {t('common.backHome')}
       </Button>
       
       <Footer />

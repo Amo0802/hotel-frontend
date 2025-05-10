@@ -1,0 +1,441 @@
+{
+  "common": {
+    "welcome": "当ホテルへようこそ",
+    "back": "戻る",
+    "save": "保存",
+    "cancel": "キャンセル",
+    "submit": "送信",
+    "loading": "読み込み中...",
+    "error": "エラーが発生しました",
+    "selectLanguage": "言語を選択",
+    "yes": "はい",
+    "no": "いいえ",
+    "close": "閉じる",
+    "continue": "続ける",
+    "backHome": "ホームに戻る"
+  },
+  "language": {
+    "title": "言語を選択してください",
+    "continue": "続ける"
+  },
+  "login": {
+    "title": "ようこそ",
+    "prompt": "予約コードを入力してください",
+    "reservationCode": "予約コードを入力",
+    "forgotCode": "コードはどこで見つけられますか？",
+    "login": "ログイン",
+    "firstTime": "初めての方はこちら",
+    "codeHelp": "予約コードは予約確認メールで送信されました。当日チェックインの場合は、フロントでもコードを取得できます。"
+  },
+  "checkIn": {
+    "title": "チェックイン",
+    "completeCheckIn": "チェックインを完了する",
+    "confirmDetails": "チェックインプロセスを完了するには、以下の情報を確認してください。",
+    "steps": {
+      "reservation": "予約",
+      "checkIn": "チェックイン",
+      "roomReady": "部屋の準備完了"
+    },
+    "fullName": "フルネーム",
+    "email": "メール",
+    "phone": "電話番号",
+    "phonePrompt": "電話番号を入力してください",
+    "idType": "身分証明書の種類",
+    "selectIdType": "身分証明書の種類を選択",
+    "passport": "パスポート",
+    "driversLicense": "運転免許証",
+    "nationalId": "国民ID",
+    "idNumber": "身分証明書番号",
+    "idNumberPrompt": "身分証明書番号を入力してください",
+    "arrival": "到着予定時間",
+    "arrivalOptions": {
+      "now": "今到着しました",
+      "oneHour": "1時間以内",
+      "twoHours": "2時間以内",
+      "today": "今日中",
+      "tomorrow": "明日"
+    },
+    "specialRequests": "特別なリクエスト",
+    "specialRequestsPrompt": "ご宿泊に関する特別なリクエストはありますか？",
+    "completeButton": "チェックインを完了"
+  },
+  "home": {
+    "foodDining": "食事・ダイニング",
+    "foodDiningDesc": "ルームサービス、レストラン、予約",
+    "amenities": "設備・アメニティ",
+    "amenitiesDesc": "スパ、プール、ジムなどの施設",
+    "hotelMap": "ホテルマップ",
+    "hotelMapDesc": "ホテル内のナビゲーション",
+    "localAttractions": "観光スポット",
+    "localAttractionsDesc": "場所と交通手段を探す",
+    "cleanRoom": "客室清掃",
+    "cleanRoomDesc": "ハウスキーピングをリクエスト",
+    "maintenance": "メンテナンス",
+    "maintenanceDesc": "客室の問題を報告",
+    "dnd": "請勿打擾 (DND)",
+    "dndDesc": "客室のプライバシーモードを切り替え",
+    "lostFound": "遺失物",
+    "lostFoundDesc": "遺失物の報告・請求",
+    "feedback": "フィードバック・レビュー",
+    "feedbackDesc": "体験を共有",
+    "askQuestion": "質問する",
+    "askQuestionDesc": "何でもサポートを受けられます",
+    "checkOut": "チェックアウト",
+    "checkOutDesc": "チェックアウト手続きを完了"
+  },
+  "foodDining": {
+    "title": "食事・ダイニング",
+    "howEnjoyMeal": "どのように食事を楽しみますか？",
+    "currentOrders": "現在の注文",
+    "roomService": "ルームサービス",
+    "roomServiceDesc": "客室で美味しい食事をお楽しみください",
+    "selectRoomService": "ルームサービスを選択",
+    "restaurant": "レストラン",
+    "restaurantDesc": "レストランで食事を注文",
+    "selectRestaurant": "レストランを選択",
+    "diningReservations": "レストラン予約",
+    "diningReservationsDesc": "朝食、昼食、夕食の予約",
+    "makeReservation": "予約する"
+  },
+  "amenities": {
+    "title": "ホテル設備",
+    "explore": "施設とサービスを探索",
+    "spa": "スパ＆ウェルネス",
+    "spaDesc": "リラクゼーショントリートメントとマッサージ",
+    "pool": "プール",
+    "poolDesc": "温水の屋内・屋外プールをお楽しみください",
+    "gym": "フィットネスセンター",
+    "gymDesc": "最新設備とパーソナルトレーナー",
+    "business": "ビジネスセンター",
+    "businessDesc": "会議室とビジネスサービス",
+    "hours": "営業時間",
+    "location": "場所",
+    "bookSession": "セッションを予約",
+    "reserveTime": "時間枠を予約",
+    "bookTrainer": "トレーナーを予約",
+    "bookRoom": "部屋を予約"
+  },
+  "hotelMap": {
+    "title": "ホテルマップ",
+    "findYourWay": "ホテル内の道順を見つける",
+    "selectFloor": "フロアを選択:",
+    "floors": {
+      "lobby": "ロビー",
+      "level1": "1階",
+      "level2": "2階",
+      "level3": "3階",
+      "level4": "4階",
+      "level5": "5階"
+    },
+    "searchLocation": "場所を検索",
+    "legend": "凡例",
+    "locations": {
+      "pool": "プール",
+      "restaurant": "レストラン",
+      "restrooms": "トイレ",
+      "yourRoom": "お部屋",
+      "exit": "出口",
+      "elevator": "エレベーター"
+    }
+  },
+  "localAttractions": {
+    "title": "地元の観光スポット",
+    "discover": "地域のベストスポットを発見",
+    "filters": {
+      "distance": "距離",
+      "all": "すべて",
+      "nearby": "近く",
+      "midRange": "5-10 km",
+      "farther": "10+ km",
+      "category": "カテゴリー",
+      "museums": "博物館",
+      "parks": "公園",
+      "shopping": "ショッピング",
+      "dining": "飲食店"
+    },
+    "getDirections": "道順を取得",
+    "distance": "距離",
+    "reviews": "レビュー",
+    "transportation": "交通手段",
+    "taxi": "タクシーサービス",
+    "taxiDesc": "ホテルから直接タクシーを予約",
+    "carRental": "レンタカー",
+    "carRentalDesc": "宿泊中に車をレンタル",
+    "publicTransit": "公共交通機関",
+    "publicTransitDesc": "バスと電車の情報",
+    "walkingTours": "ウォーキングツアー",
+    "walkingToursDesc": "ガイド付きとセルフガイドのオプション",
+    "bookNow": "今すぐ予約",
+    "viewOptions": "オプションを表示",
+    "viewRoutes": "ルートを表示",
+    "bookTour": "ツアーを予約"
+  },
+  "cleanRoom": {
+    "title": "ハウスキーピングサービス",
+    "currentRequest": "現在のリクエスト",
+    "requestHousekeeping": "ハウスキーピングをリクエスト",
+    "availableHours": "ハウスキーピングチームは毎日8:00 AMから8:00 PMまで利用可能です。",
+    "serviceType": "サービスタイプ",
+    "selectServiceType": "サービスタイプを選択",
+    "services": {
+      "full": "完全清掃",
+      "light": "軽い清掃",
+      "turndown": "夜のサービス",
+      "towels": "新しいタオルのみ",
+      "supplies": "備品の補充"
+    },
+    "preferredTime": "希望時間",
+    "selectTime": "時間を選択",
+    "timeOptions": {
+      "asap": "できるだけ早く",
+      "morning": "朝 (8AM - 12PM)",
+      "afternoon": "午後 (12PM - 4PM)",
+      "evening": "夕方 (4PM - 8PM)"
+    },
+    "specialInstructions": "特別な指示",
+    "specialInstructionsPrompt": "特別なリクエストや指示はありますか？",
+    "notPresent": "清掃中は部屋にいません",
+    "submitRequest": "リクエストを送信",
+    "regularSchedule": "定期的な清掃スケジュール",
+    "scheduledDays": "お部屋は以下の日に定期的に清掃されます:",
+    "daysOfWeek": {
+      "mon": "月",
+      "tue": "火",
+      "wed": "水",
+      "thu": "木",
+      "fri": "金",
+      "sat": "土",
+      "sun": "日"
+    },
+    "adjustSchedule": "定期的な清掃スケジュールを調整したい"
+  },
+  "maintenance": {
+    "title": "メンテナンスリクエスト",
+    "reportIssues": "お部屋の問題を報告",
+    "openRequests": "未解決のリクエスト",
+    "reportIssue": "問題を報告",
+    "issueCategory": "問題カテゴリー",
+    "selectCategory": "カテゴリーを選択",
+    "categories": {
+      "ac": "エアコン/暖房",
+      "electrical": "電気",
+      "plumbing": "配管",
+      "tv": "TV/エンターテイメント",
+      "internet": "インターネット/WiFi",
+      "furniture": "家具/備品",
+      "other": "その他"
+    },
+    "issueDescription": "問題の説明",
+    "descriptionPrompt": "問題を詳しく説明してください",
+    "priority": "優先度",
+    "priorityLevels": {
+      "low": "低 - 緊急でない",
+      "medium": "中 - 注意が必要",
+      "high": "高 - 緊急の問題"
+    },
+    "addPhotos": "写真を追加",
+    "takePhoto": "写真を撮る",
+    "uploadPhoto": "写真をアップロード",
+    "authEntry": "不在時の部屋への入室を許可します",
+    "contactMethod": "希望の連絡方法",
+    "contactOptions": {
+      "app": "アプリ通知",
+      "phone": "電話",
+      "sms": "SMS",
+      "email": "メール"
+    }
+  },
+  "lostFound": {
+    "title": "遺失物",
+    "reportLost": "紛失物を報告",
+    "browseFound": "拾得物を閲覧",
+    "myReports": "私の報告",
+    "itemNameType": "品物の名前/種類",
+    "itemNamePrompt": "例: 黒い財布、サングラス",
+    "description": "説明",
+    "descriptionPrompt": "品物を詳しく説明してください（色、ブランド、特徴など）",
+    "category": "カテゴリー",
+    "selectCategory": "カテゴリーを選択",
+    "categories": {
+      "electronics": "電子機器",
+      "wallet": "財布/ポーチ",
+      "clothing": "衣類",
+      "jewelry": "宝石類",
+      "keys": "鍵",
+      "documents": "書類",
+      "other": "その他"
+    },
+    "lastLocation": "最後に見た場所",
+    "selectLocation": "場所を選択",
+    "locations": {
+      "room": "私の部屋",
+      "restaurant": "レストラン",
+      "lobby": "ロビー",
+      "pool": "プールエリア",
+      "spa": "スパ",
+      "gym": "フィットネスセンター",
+      "other": "その他"
+    },
+    "lastSeenTime": "最後に見た日時",
+    "addPhoto": "品物の写真を追加（可能な場合）",
+    "uploadPhoto": "写真をアップロード",
+    "contactNumber": "連絡先番号",
+    "contactNumberPrompt": "あなたの電話番号",
+    "submitReport": "報告を提出",
+    "recentlyFound": "最近の拾得物",
+    "claimInstructions": "これらの品物は遺失物取扱所に届けられています。あなたの品物を見つけた場合は請求してください。",
+    "filterBy": "フィルター:",
+    "searchItems": "品物を検索...",
+    "found": "見つかりました",
+    "claimItem": "この品物を請求",
+    "yourReports": "あなたの報告",
+    "noReports": "まだ紛失物を報告していません。",
+    "reportStatus": {
+      "pending": "保留中",
+      "found": "見つかりました",
+      "closed": "閉鎖"
+    },
+    "viewDetails": "詳細を表示",
+    "update": "更新"
+  },
+  "feedback": {
+    "title": "フィードバック＆レビュー",
+    "valueOpinion": "あなたの意見を大切にします",
+    "shareExperience": "体験を共有",
+    "helpImprove": "フィードバックは改善に役立ちます。宿泊を評価し、感想を共有してください。",
+    "overallExperience": "全体的な体験",
+    "categories": {
+      "room": "部屋の品質",
+      "service": "サービス",
+      "cleanliness": "清潔さ",
+      "food": "食事",
+      "value": "コストパフォーマンス"
+    },
+    "reviewTitle": "レビュータイトル",
+    "reviewTitlePrompt": "体験を要約",
+    "yourReview": "あなたのレビュー",
+    "reviewPrompt": "宿泊について詳しく教えてください",
+    "likes": "最も気に入った点は？",
+    "improvements": "改善点は？",
+    "addPhotos": "写真を追加（任意）",
+    "uploadPhotos": "写真をアップロード",
+    "anonymous": "匿名で提出",
+    "submitReview": "レビューを提出",
+    "quickFeedback": "クイックフィードバック",
+    "quickFeedbackPrompt": "具体的なコメントや提案がありますか？お知らせください。",
+    "feedbackTypes": {
+      "compliment": "褒め言葉",
+      "suggestion": "提案",
+      "issue": "問題"
+    },
+    "sendFeedback": "フィードバックを送信",
+    "likeTags": {
+      "location": "場所",
+      "staff": "スタッフ",
+      "comfort": "快適さ",
+      "amenities": "設備",
+      "food": "食事",
+      "roomSize": "部屋の広さ",
+      "cleanliness": "清潔さ",
+      "value": "価値"
+    },
+    "improvementTags": {
+      "noise": "騒音",
+      "bathroom": "バスルーム",
+      "wifi": "WiFi",
+      "ac": "エアコン",
+      "foodQuality": "食事の質",
+      "checkIn": "チェックインプロセス",
+      "roomService": "ルームサービス",
+      "pricing": "価格設定"
+    }
+  },
+  "chatbot": {
+    "title": "質問する",
+    "aiAssistant": "AIアシスタントがお手伝いします",
+    "greeting": "こんにちは！私はホテルアシスタントです。今日はどのようなご用件ですか？",
+    "inputPlaceholder": "ここに質問を入力...",
+    "quickQuestions": {
+      "breakfast": "朝食は何時ですか？",
+      "airport": "空港への行き方は？",
+      "fitness": "フィットネスセンターはどこですか？",
+      "wifi": "WiFiのパスワードは？"
+    }
+  },
+  "checkOut": {
+    "title": "チェックアウト",
+    "steps": {
+      "review": "確認",
+      "payment": "支払い",
+      "confirm": "確認"
+    },
+    "staySummary": "宿泊の概要",
+    "stayDetails": {
+      "guest": "ゲスト",
+      "room": "部屋",
+      "checkIn": "チェックイン",
+      "checkOut": "チェックアウト",
+      "lateCheckOut": "レイトチェックアウト"
+    },
+    "checkOutOptions": {
+      "standard": "標準 (11:00 AM)",
+      "1pm": "1:00 PM (+¥2,000)",
+      "3pm": "3:00 PM (+¥4,000)",
+      "6pm": "6:00 PM (+¥6,000)"
+    },
+    "bill": {
+      "title": "請求書",
+      "description": "説明",
+      "date": "日付",
+      "amount": "金額",
+      "subtotal": "小計",
+      "tax": "税",
+      "total": "合計",
+      "depositPaid": "前払い済み",
+      "balanceDue": "残金",
+      "viewDetailed": "詳細な請求書を表示",
+      "emailReceipt": "領収書をメールで送信"
+    },
+    "paymentMethod": {
+      "title": "支払い方法",
+      "cardOnFile": "登録済みカード",
+      "newCard": "新しいカード",
+      "payFrontDesk": "フロントで支払い",
+      "cardNumber": "カード番号",
+      "expiryDate": "有効期限",
+      "cvc": "CVC",
+      "cardholderName": "カード名義人"
+    },
+    "feedback": {
+      "howWasStay": "宿泊はいかがでしたか？",
+      "ratings": {
+        "poor": "悪い",
+        "average": "普通",
+        "good": "良い",
+        "excellent": "素晴らしい"
+      },
+      "detailedFeedback": "詳細なフィードバックを残す"
+    },
+    "actions": {
+      "notNow": "後で",
+      "completeCheckOut": "チェックアウトを完了"
+    }
+  },
+  "roomService": {
+    "title": "ルームサービスメニュー",
+    "yourOrder": "ご注文",
+    "emptyOrder": "注文が空です。メニューから商品を追加してください。",
+    "total": "合計:",
+    "placeOrder": "注文する"
+  },
+  "notifications": {
+    "cleaningProgress": "客室清掃中",
+    "dndEnabled": "請勿打擾 (DND) 有効",
+    "disable": "無効にする",
+    "inProgress": "進行中",
+    "eta": "到着予定時間",
+    "cancel": "キャンセル",
+    "update": "更新",
+    "minutes": "分"
+  }
+}

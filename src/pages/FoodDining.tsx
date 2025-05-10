@@ -1,9 +1,12 @@
+// src/pages/FoodDining.tsx
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import LogoPlaceholder from '../components/common/LogoPlaceholder';
 import Card from '../components/common/Card';
 import Button from '../components/common/Button';
 import Footer from '../components/common/Footer';
+import FloatingLanguageSelector from '../components/common/FloatingLanguageSelector';
 import '../styles/pages/FoodDining.css';
 
 interface ServiceOption {
@@ -15,29 +18,30 @@ interface ServiceOption {
 }
 
 const FoodDining: React.FC = () => {
+  const { t } = useTranslation();
   const navigate = useNavigate();
 
   const serviceOptions: ServiceOption[] = [
     {
       id: 'room-service',
       icon: '🛎️',
-      title: 'Room Service',
-      description: 'Enjoy a delicious meal in the comfort of your room',
-      action: 'Select Room Service'
+      title: t('foodDining.roomService'),
+      description: t('foodDining.roomServiceDesc'),
+      action: t('foodDining.selectRoomService')
     },
     {
       id: 'restaurant',
       icon: '🍽️',
-      title: 'Restaurant',
-      description: 'Order for dine-in at our restaurant',
-      action: 'Select Restaurant'
+      title: t('foodDining.restaurant'),
+      description: t('foodDining.restaurantDesc'),
+      action: t('foodDining.selectRestaurant')
     },
     {
       id: 'dining-reservation',
       icon: '📅',
-      title: 'Dining Reservations',
-      description: 'Make a reservation for breakfast, lunch or dinner',
-      action: 'Make Reservation'
+      title: t('foodDining.diningReservations'),
+      description: t('foodDining.diningReservationsDesc'),
+      action: t('foodDining.makeReservation')
     }
   ];
 
@@ -61,15 +65,17 @@ const FoodDining: React.FC = () => {
 
   return (
     <div className="container">
+      <FloatingLanguageSelector />
+      
       <div className="logo-area">
         <LogoPlaceholder />
-        <h1 className="heading-primary">Food & Dining</h1>
-        <p className="help-text text-center">How would you like to enjoy your meal?</p>
+        <h1 className="heading-primary">{t('foodDining.title')}</h1>
+        <p className="help-text text-center">{t('foodDining.howEnjoyMeal')}</p>
       </div>
       
       {/* Status indicator for food orders */}
       <div className="status-indicator-box">
-        <div className="status-indicator-title">Your Current Orders</div>
+        <div className="status-indicator-title">{t('foodDining.currentOrders')}</div>
         <div className="status-item">
           <div className="status-icon food">🍽️</div>
           <div className="status-details">
@@ -78,7 +84,7 @@ const FoodDining: React.FC = () => {
             <div className="status-progress">
               <div className="status-bar" style={{ width: '75%' }}></div>
             </div>
-            <p className="status-label">Preparing your order</p>
+            <p className="status-label">{t('notifications.inProgress')}</p>
           </div>
         </div>
       </div>
@@ -95,7 +101,7 @@ const FoodDining: React.FC = () => {
       </div>
       
       <Button variant="text" onClick={() => navigate('/home')}>
-        ← Back to Home
+        ← {t('common.backHome')}
       </Button>
       
       <Footer />

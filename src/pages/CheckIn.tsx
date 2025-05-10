@@ -1,12 +1,14 @@
 import React, { useState, FormEvent, ChangeEvent } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { useAuth } from '../context/AuthContext';
-import { checkInUser } from '../api/authApi';
+import { checkInUser } from '../api/authService';
 import LogoPlaceholder from '../components/common/LogoPlaceholder';
 import Card from '../components/common/Card';
 import Button from '../components/common/Button';
 import InputField from '../components/common/InputField';
 import Footer from '../components/common/Footer';
+import FloatingLanguageSelector from '../components/common/FloatingLanguageSelector';
 import '../styles/pages/CheckIn.css';
 
 interface CheckInFormData {
@@ -18,6 +20,7 @@ interface CheckInFormData {
 }
 
 const CheckIn: React.FC = () => {
+  const { t } = useTranslation();
   const { user, completeCheckIn } = useAuth();
   const navigate = useNavigate();
   const [loading, setLoading] = useState<boolean>(false);
@@ -52,10 +55,10 @@ const CheckIn: React.FC = () => {
         completeCheckIn();
         navigate('/home');
       } else {
-        setError(response.message || 'An error occurred during check-in.');
+        setError(response.message || t('common.error'));
       }
     } catch (err) {
-      const errorMessage = err instanceof Error ? err.message : 'An error occurred. Please try again.';
+      const errorMessage = err instanceof Error ? err.message : t('common.error');
       setError(errorMessage);
     } finally {
       setLoading(false);
@@ -64,44 +67,46 @@ const CheckIn: React.FC = () => {
 
   return (
     <div className="container">
+      <FloatingLanguageSelector />
+      
       <div className="logo-area">
         <LogoPlaceholder />
-        <h1 className="heading-primary">Check-In</h1>
+        <h1 className="heading-primary">{t('checkIn.title')}</h1>
       </div>
       
       <Card>
-        <h2 className="heading-secondary">Complete Your Check-In</h2>
-        <p className="help-text">Please confirm your details below to complete the check-in process.</p>
+        <h2 className="heading-secondary">{t('checkIn.completeCheckIn')}</h2>
+        <p className="help-text">{t('checkIn.confirmDetails')}</p>
         
         {/* Status indicator for check-in process */}
         <div className="status-indicator">
           <div className="status-step completed">
             <div className="status-circle">1</div>
-            <div className="status-label">Reservation</div>
+            <div className="status-label">{t('checkIn.steps.reservation')}</div>
           </div>
           <div className="status-line"></div>
           <div className="status-step active">
             <div className="status-circle">2</div>
-            <div className="status-label">Check-In</div>
+            <div className="status-label">{t('checkIn.steps.checkIn')}</div>
           </div>
           <div className="status-line"></div>
           <div className="status-step">
             <div className="status-circle">3</div>
-            <div className="status-label">Room Ready</div>
+            <div className="status-label">{t('checkIn.steps.roomReady')}</div>
           </div>
         </div>
         
         <form onSubmit={handleSubmit}>
           <InputField
             id="guest-name"
-            label="Full Name"
+            label={t('checkIn.fullName')}
             value={user?.name || 'John Doe'}
             readOnly
           />
           
           <InputField
             id="guest-email"
-            label="Email"
+            label={t('checkIn.email')}
             type="email"
             value={user?.email || 'john.doe@example.com'}
             readOnly
@@ -109,16 +114,16 @@ const CheckIn: React.FC = () => {
           
           <InputField
             id="phone"
-            label="Phone Number"
+            label={t('checkIn.phone')}
             type="tel"
-            placeholder="Enter your phone number"
+            placeholder={t('checkIn.phonePrompt')}
             value={formData.phone}
             onChange={handleChange}
             required
           />
           
           <div className="form-group">
-            <label className="form-label" htmlFor="idType">ID Type</label>
+            <label className="form-label" htmlFor="idType">{t('checkIn.idType')}</label>
             <select 
               className="form-input" 
               id="idType" 
@@ -126,44 +131,44 @@ const CheckIn: React.FC = () => {
               onChange={handleChange}
               required
             >
-              <option value="" disabled>Select ID Type</option>
-              <option value="passport">Passport</option>
-              <option value="driver">Driver's License</option>
-              <option value="national">National ID</option>
+              <option value="" disabled>{t('checkIn.selectIdType')}</option>
+              <option value="passport">{t('checkIn.passport')}</option>
+              <option value="driver">{t('checkIn.driversLicense')}</option>
+              <option value="national">{t('checkIn.nationalId')}</option>
             </select>
           </div>
           
           <InputField
             id="idNumber"
-            label="ID Number"
-            placeholder="Enter your ID number"
+            label={t('checkIn.idNumber')}
+            placeholder={t('checkIn.idNumberPrompt')}
             value={formData.idNumber}
             onChange={handleChange}
             required
           />
           
           <div className="form-group">
-            <label className="form-label" htmlFor="arrivalTime">Estimated Arrival Time</label>
+            <label className="form-label" htmlFor="arrivalTime">{t('checkIn.arrival')}</label>
             <select 
               className="form-input" 
               id="arrivalTime"
               value={formData.arrivalTime}
               onChange={handleChange}
             >
-              <option value="now">I'm arriving now</option>
-              <option value="1hour">Within 1 hour</option>
-              <option value="2hours">Within 2 hours</option>
-              <option value="today">Later today</option>
-              <option value="tomorrow">Tomorrow</option>
+              <option value="now">{t('checkIn.arrivalOptions.now')}</option>
+              <option value="1hour">{t('checkIn.arrivalOptions.oneHour')}</option>
+              <option value="2hours">{t('checkIn.arrivalOptions.twoHours')}</option>
+              <option value="today">{t('checkIn.arrivalOptions.today')}</option>
+              <option value="tomorrow">{t('checkIn.arrivalOptions.tomorrow')}</option>
             </select>
           </div>
           
           <div className="form-group">
-            <label className="form-label" htmlFor="specialRequests">Special Requests</label>
+            <label className="form-label" htmlFor="specialRequests">{t('checkIn.specialRequests')}</label>
             <textarea 
               className="form-input" 
               id="specialRequests" 
-              placeholder="Any special requests for your stay?" 
+              placeholder={t('checkIn.specialRequestsPrompt')} 
               rows={3}
               value={formData.specialRequests}
               onChange={handleChange}
@@ -172,7 +177,7 @@ const CheckIn: React.FC = () => {
           
           {error && <div className="error-message">{error}</div>}
           
-          <Button type="submit" loading={loading}>Complete Check-In</Button>
+          <Button type="submit" loading={loading}>{t('checkIn.completeButton')}</Button>
         </form>
       </Card>
       

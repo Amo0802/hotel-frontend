@@ -1,10 +1,13 @@
+// src/pages/CheckOut.tsx
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { useAuth } from '../context/AuthContext';
 import LogoPlaceholder from '../components/common/LogoPlaceholder';
 import Card from '../components/common/Card';
 import Button from '../components/common/Button';
 import Footer from '../components/common/Footer';
+import FloatingLanguageSelector from '../components/common/FloatingLanguageSelector';
 import '../styles/pages/CheckOut.css';
 
 // Types for checkout data
@@ -58,6 +61,7 @@ type PaymentMethod = 'card-on-file' | 'new-card' | 'pay-at-desk';
 type FeedbackRating = 'poor' | 'average' | 'good' | 'excellent';
 
 const CheckOut: React.FC = () => {
+  const { t } = useTranslation();
   const navigate = useNavigate();
   const { logout } = useAuth();
   const [checkoutData, setCheckoutData] = useState<CheckoutData>(mockCheckoutData);
@@ -124,11 +128,11 @@ const CheckOut: React.FC = () => {
   };
 
   const handleViewDetailedBill = (): void => {
-    alert('Detailed bill would open in a new window or modal.');
+    alert(t('checkOut.bill.viewDetailed'));
   };
 
   const handleEmailReceipt = (): void => {
-    alert('Receipt has been emailed to your registered email address.');
+    alert(t('checkOut.bill.emailReceipt'));
   };
 
   const handleFeedbackSelection = (rating: FeedbackRating): void => {
@@ -166,7 +170,7 @@ const CheckOut: React.FC = () => {
         navigate('/login');
       }, 1500);
     } catch (err) {
-      const errorMessage = err instanceof Error ? err.message : 'An error occurred';
+      const errorMessage = err instanceof Error ? err.message : t('common.error');
       setError(errorMessage);
     } finally {
       setLoading(false);
@@ -175,51 +179,53 @@ const CheckOut: React.FC = () => {
 
   return (
     <div className="container">
+      <FloatingLanguageSelector />
+      
       <div className="logo-area">
         <LogoPlaceholder />
-        <h1 className="heading-primary">Check-Out</h1>
+        <h1 className="heading-primary">{t('checkOut.title')}</h1>
       </div>
       
       {/* Status indicator for check-out process */}
       <div className="status-indicator">
         <div className="status-step active">
           <div className="status-circle">1</div>
-          <div className="status-label">Review</div>
+          <div className="status-label">{t('checkOut.steps.review')}</div>
         </div>
         <div className="status-line"></div>
         <div className="status-step">
           <div className="status-circle">2</div>
-          <div className="status-label">Payment</div>
+          <div className="status-label">{t('checkOut.steps.payment')}</div>
         </div>
         <div className="status-line"></div>
         <div className="status-step">
           <div className="status-circle">3</div>
-          <div className="status-label">Confirm</div>
+          <div className="status-label">{t('checkOut.steps.confirm')}</div>
         </div>
       </div>
       
       <Card>
-        <h2 className="heading-secondary">Stay Summary</h2>
+        <h2 className="heading-secondary">{t('checkOut.staySummary')}</h2>
         
         <div className="stay-details">
           <div className="stay-detail-item">
-            <div className="detail-label">Guest</div>
+            <div className="detail-label">{t('checkOut.stayDetails.guest')}</div>
             <div className="detail-value">{checkoutData.guestName}</div>
           </div>
           <div className="stay-detail-item">
-            <div className="detail-label">Room</div>
+            <div className="detail-label">{t('checkOut.stayDetails.room')}</div>
             <div className="detail-value">{checkoutData.roomNumber} - {checkoutData.roomType}</div>
           </div>
           <div className="stay-detail-item">
-            <div className="detail-label">Check-In</div>
+            <div className="detail-label">{t('checkOut.stayDetails.checkIn')}</div>
             <div className="detail-value">{checkoutData.checkInDate}</div>
           </div>
           <div className="stay-detail-item">
-            <div className="detail-label">Check-Out</div>
+            <div className="detail-label">{t('checkOut.stayDetails.checkOut')}</div>
             <div className="detail-value">{checkoutData.checkOutDate} (Today)</div>
           </div>
           <div className="stay-detail-item">
-            <div className="detail-label">Late Check-Out</div>
+            <div className="detail-label">{t('checkOut.stayDetails.lateCheckOut')}</div>
             <div className="detail-value">
               <select 
                 className="form-input" 
@@ -227,10 +233,10 @@ const CheckOut: React.FC = () => {
                 value={lateCheckout}
                 onChange={handleLateCheckoutChange}
               >
-                <option value="standard">Standard (11:00 AM)</option>
-                <option value="1pm">1:00 PM (+$20)</option>
-                <option value="3pm">3:00 PM (+$40)</option>
-                <option value="6pm">6:00 PM (+$60)</option>
+                <option value="standard">{t('checkOut.checkOutOptions.standard')}</option>
+                <option value="1pm">{t('checkOut.checkOutOptions.1pm')}</option>
+                <option value="3pm">{t('checkOut.checkOutOptions.3pm')}</option>
+                <option value="6pm">{t('checkOut.checkOutOptions.6pm')}</option>
               </select>
             </div>
           </div>
@@ -238,13 +244,13 @@ const CheckOut: React.FC = () => {
       </Card>
       
       <Card>
-        <h2 className="heading-secondary">Your Bill</h2>
+        <h2 className="heading-secondary">{t('checkOut.bill.title')}</h2>
         
         <div className="bill-summary">
           <div className="bill-header">
-            <div className="bill-col">Description</div>
-            <div className="bill-col">Date</div>
-            <div className="bill-col">Amount</div>
+            <div className="bill-col">{t('checkOut.bill.description')}</div>
+            <div className="bill-col">{t('checkOut.bill.date')}</div>
+            <div className="bill-col">{t('checkOut.bill.amount')}</div>
           </div>
           
           {checkoutData.billItems.map(item => (
@@ -256,44 +262,44 @@ const CheckOut: React.FC = () => {
           ))}
           
           <div className="bill-subtotal">
-            <div className="bill-col">Subtotal</div>
+            <div className="bill-col">{t('checkOut.bill.subtotal')}</div>
             <div className="bill-col"></div>
             <div className="bill-col">${checkoutData.subtotal.toFixed(2)}</div>
           </div>
           
           <div className="bill-item">
-            <div className="bill-col">Tax ({(checkoutData.taxRate * 100).toFixed(0)}%)</div>
+            <div className="bill-col">{t('checkOut.bill.tax')} ({(checkoutData.taxRate * 100).toFixed(0)}%)</div>
             <div className="bill-col"></div>
             <div className="bill-col">${checkoutData.taxAmount.toFixed(2)}</div>
           </div>
           
           <div className="bill-total">
-            <div className="bill-col">Total</div>
+            <div className="bill-col">{t('checkOut.bill.total')}</div>
             <div className="bill-col"></div>
             <div className="bill-col">${checkoutData.total.toFixed(2)}</div>
           </div>
           
           <div className="bill-item">
-            <div className="bill-col">Deposit Paid</div>
+            <div className="bill-col">{t('checkOut.bill.depositPaid')}</div>
             <div className="bill-col">{checkoutData.checkInDate}</div>
             <div className="bill-col">-${checkoutData.depositPaid.toFixed(2)}</div>
           </div>
           
           <div className="bill-balance">
-            <div className="bill-col">Balance Due</div>
+            <div className="bill-col">{t('checkOut.bill.balanceDue')}</div>
             <div className="bill-col"></div>
             <div className="bill-col">${checkoutData.balanceDue.toFixed(2)}</div>
           </div>
         </div>
         
         <div className="bill-actions">
-          <Button variant="secondary" onClick={handleViewDetailedBill}>View Detailed Bill</Button>
-          <Button variant="secondary" onClick={handleEmailReceipt}>Email Receipt</Button>
+          <Button variant="secondary" onClick={handleViewDetailedBill}>{t('checkOut.bill.viewDetailed')}</Button>
+          <Button variant="secondary" onClick={handleEmailReceipt}>{t('checkOut.bill.emailReceipt')}</Button>
         </div>
       </Card>
       
       <Card>
-        <h2 className="heading-secondary">Payment Method</h2>
+        <h2 className="heading-secondary">{t('checkOut.paymentMethod.title')}</h2>
         <div className="payment-methods">
           <div 
             className={`payment-method-option ${paymentMethod === 'card-on-file' ? 'active' : ''}`}
@@ -307,7 +313,7 @@ const CheckOut: React.FC = () => {
               onChange={() => {}}
             />
             <label htmlFor="card-on-file">
-              <div className="payment-label">Card on File</div>
+              <div className="payment-label">{t('checkOut.paymentMethod.cardOnFile')}</div>
               <div className="payment-details">VISA •••• 4567</div>
             </label>
           </div>
@@ -324,7 +330,7 @@ const CheckOut: React.FC = () => {
               onChange={() => {}}
             />
             <label htmlFor="new-card">
-              <div className="payment-label">New Card</div>
+              <div className="payment-label">{t('checkOut.paymentMethod.newCard')}</div>
             </label>
           </div>
           
@@ -340,7 +346,7 @@ const CheckOut: React.FC = () => {
               onChange={() => {}}
             />
             <label htmlFor="pay-at-desk">
-              <div className="payment-label">Pay at Front Desk</div>
+              <div className="payment-label">{t('checkOut.paymentMethod.payFrontDesk')}</div>
             </label>
           </div>
         </div>
@@ -349,30 +355,30 @@ const CheckOut: React.FC = () => {
         {showNewCardForm && (
           <div className="new-card-form">
             <div className="form-group">
-              <label className="form-label">Card Number</label>
-              <input type="text" className="form-input" placeholder="Card number" />
+              <label className="form-label">{t('checkOut.paymentMethod.cardNumber')}</label>
+              <input type="text" className="form-input" placeholder={t('checkOut.paymentMethod.cardNumber')} />
             </div>
             <div className="form-row">
               <div className="form-group">
-                <label className="form-label">Expiry Date</label>
+                <label className="form-label">{t('checkOut.paymentMethod.expiryDate')}</label>
                 <input type="text" className="form-input" placeholder="MM/YY" />
               </div>
               <div className="form-group">
-                <label className="form-label">CVC</label>
+                <label className="form-label">{t('checkOut.paymentMethod.cvc')}</label>
                 <input type="text" className="form-input" placeholder="CVC" />
               </div>
             </div>
             <div className="form-group">
-              <label className="form-label">Cardholder Name</label>
-              <input type="text" className="form-input" placeholder="Name on card" />
+              <label className="form-label">{t('checkOut.paymentMethod.cardholderName')}</label>
+              <input type="text" className="form-input" placeholder={t('checkOut.paymentMethod.cardholderName')} />
             </div>
           </div>
         )}
       </Card>
       
       <Card>
-        <h2 className="heading-secondary">Feedback</h2>
-        <p className="help-text">How was your stay with us?</p>
+        <h2 className="heading-secondary">{t('checkOut.feedback.title')}</h2>
+        <p className="help-text">{t('checkOut.feedback.howWasStay')}</p>
         
         <div className="quick-rating">
           <div className="quick-rating-options">
@@ -381,44 +387,44 @@ const CheckOut: React.FC = () => {
               onClick={() => handleFeedbackSelection('poor')}
             >
               <div className="rating-emoji">😞</div>
-              <div className="rating-label">Poor</div>
+              <div className="rating-label">{t('checkOut.feedback.ratings.poor')}</div>
             </div>
             <div 
               className={`rating-option ${feedbackRating === 'average' ? 'active' : ''}`}
               onClick={() => handleFeedbackSelection('average')}
             >
               <div className="rating-emoji">😐</div>
-              <div className="rating-label">Average</div>
+              <div className="rating-label">{t('checkOut.feedback.ratings.average')}</div>
             </div>
             <div 
               className={`rating-option ${feedbackRating === 'good' ? 'active' : ''}`}
               onClick={() => handleFeedbackSelection('good')}
             >
               <div className="rating-emoji">🙂</div>
-              <div className="rating-label">Good</div>
+              <div className="rating-label">{t('checkOut.feedback.ratings.good')}</div>
             </div>
             <div 
               className={`rating-option ${feedbackRating === 'excellent' ? 'active' : ''}`}
               onClick={() => handleFeedbackSelection('excellent')}
             >
               <div className="rating-emoji">😄</div>
-              <div className="rating-label">Excellent</div>
+              <div className="rating-label">{t('checkOut.feedback.ratings.excellent')}</div>
             </div>
           </div>
           
-          <a href="#" className="link" onClick={handleDetailedFeedback}>Leave detailed feedback →</a>
+          <a href="#" className="link" onClick={handleDetailedFeedback}>{t('checkOut.feedback.detailedFeedback')} →</a>
         </div>
       </Card>
       
       {error && <div className="error-message">{error}</div>}
       
       <div className="checkout-actions">
-        <Button variant="secondary" onClick={() => navigate('/home')}>Not Now</Button>
+        <Button variant="secondary" onClick={() => navigate('/home')}>{t('checkOut.actions.notNow')}</Button>
         <Button 
           onClick={handleCompleteCheckout} 
           loading={loading}
         >
-          Complete Check-Out
+          {t('checkOut.actions.completeCheckOut')}
         </Button>
       </div>
       
